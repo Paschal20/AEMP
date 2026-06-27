@@ -5,373 +5,576 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AEMP - Archdiocesan Engagement for Mission Programme</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f0eb; color: #1a1a1a; line-height: 1.6; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+:root {
+  --bg: #f5f0eb; --surface: #fff; --text: #1a1a1a; --text2: #555;
+  --accent: #8B0000; --accent2: #5c0000; --border: #e0d8d0; --tag-bg: #e8e0d8;
+  --sidebar-bg: #fff; --hover: #f0e8e0; --shadow: rgba(0,0,0,0.06);
+  --link: #2a5c8a; --prayer-bg: #f9f3ee;
+}
+.dark {
+  --bg: #1a1a1a; --surface: #2a2a2a; --text: #e0e0e0; --text2: #999;
+  --accent: #c0392b; --accent2: #e74c3c; --border: #3a3a3a; --tag-bg: #3a3a3a;
+  --sidebar-bg: #222; --hover: #333; --shadow: rgba(0,0,0,0.2);
+  --link: #5a9fd4; --prayer-bg: #2a2220;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; transition: background .3s, color .3s; }
 
-  header { background: linear-gradient(135deg, #8B0000, #5c0000); color: #fff; padding: 40px 20px; text-align: center; border-radius: 12px; margin-bottom: 24px; }
-  header h1 { font-size: 1.8em; margin-bottom: 8px; }
-  header p { opacity: 0.9; font-size: 0.95em; }
+/* Layout */
+.layout { display: flex; max-width: 1400px; margin: 0 auto; min-height: 100vh; }
 
-  .quick-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin-bottom: 24px; }
-  .quick-links a { background: #fff; padding: 12px 16px; border-radius: 8px; text-decoration: none; color: #8B0000; font-weight: 600; font-size: 0.9em; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: 0.2s; }
-  .quick-links a:hover { background: #8B0000; color: #fff; transform: translateY(-1px); }
+/* Sidebar */
+.sidebar { width: 250px; flex-shrink: 0; background: var(--sidebar-bg); border-right: 1px solid var(--border); padding: 20px 0; position: fixed; top: 0; left: 0; height: 100vh; overflow-y: auto; z-index: 100; transition: background .3s, transform .3s; }
+.sidebar h2 { font-size: 0.85em; color: var(--accent); padding: 0 16px 8px; border-bottom: 1px solid var(--border); margin-bottom: 8px; }
+.sidebar a { display: block; padding: 6px 16px; font-size: 0.82em; color: var(--text2); text-decoration: none; border-left: 3px solid transparent; transition: .2s; }
+.sidebar a:hover, .sidebar a.active { color: var(--accent); background: var(--hover); border-left-color: var(--accent); }
+.sidebar .section-label { font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; color: var(--text2); padding: 12px 16px 4px; font-weight: 700; }
+.hamburger { display: none; position: fixed; top: 12px; left: 12px; z-index: 200; background: var(--accent); color: #fff; border: none; width: 40px; height: 40px; border-radius: 8px; font-size: 1.3em; cursor: pointer; }
 
-  section { background: #fff; border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-  section h2 { font-size: 1.2em; color: #8B0000; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid #f0e8e0; }
-  section h3 { font-size: 1em; color: #5c0000; margin: 12px 0 6px; }
-  section h4 { font-size: 0.9em; color: #333; margin: 8px 0 4px; }
+/* Main */
+.main { margin-left: 250px; flex: 1; padding: 0; }
+.container { max-width: 960px; margin: 0 auto; padding: 24px; }
 
-  .prayer-box { background: #f9f3ee; padding: 16px; border-radius: 8px; font-style: italic; font-size: 0.9em; margin-bottom: 8px; }
+/* Header */
+header { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff; padding: 40px 24px; text-align: center; border-radius: 12px; margin-bottom: 24px; position: relative; }
+header h1 { font-size: 1.8em; margin-bottom: 6px; }
+header p { opacity: 0.9; font-size: 0.9em; }
+.theme-toggle { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.2); color: #fff; border: none; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 1.1em; }
 
-  .module { margin-bottom: 12px; }
-  .module-header { background: #f5f0eb; padding: 10px 14px; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
-  .module-header:hover { background: #ede4dc; }
-  .module-body { padding: 12px 14px; display: none; }
-  .module-body.open { display: block; }
-  .topic { background: #faf8f6; padding: 10px 14px; border-radius: 6px; margin-bottom: 8px; }
-  .topic-name { font-weight: 600; font-size: 0.9em; margin-bottom: 4px; }
-  .resource-list { list-style: none; font-size: 0.85em; }
-  .resource-list li { padding: 2px 0; }
-  .resource-list a { color: #2a5c8a; text-decoration: none; }
-  .resource-list a:hover { text-decoration: underline; }
-  .badge { display: inline-block; background: #8B0000; color: #fff; padding: 1px 8px; border-radius: 10px; font-size: 0.75em; margin-left: 4px; }
+/* Search */
+.search-wrap { margin-bottom: 20px; }
+.search-wrap input { width: 100%; padding: 12px 16px; border: 2px solid var(--border); border-radius: 10px; font-size: 1em; background: var(--surface); color: var(--text); transition: .2s; }
+.search-wrap input:focus { outline: none; border-color: var(--accent); }
 
-  .tag { display: inline-block; background: #e8e0d8; padding: 1px 8px; border-radius: 10px; font-size: 0.75em; margin: 2px; }
+/* Overview stats */
+.stats { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-bottom: 20px; }
+.stat-card { background: var(--surface); border-radius: 10px; padding: 14px; text-align: center; box-shadow: 0 1px 4px var(--shadow); }
+.stat-card .num { font-size: 1.5em; font-weight: 700; color: var(--accent); }
+.stat-card .label { font-size: 0.75em; color: var(--text2); margin-top: 2px; }
 
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+/* Sections */
+section { background: var(--surface); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; box-shadow: 0 1px 4px var(--shadow); transition: background .3s; }
+section h2 { font-size: 1.2em; color: var(--accent); margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+section h3 { font-size: 1em; color: var(--accent2); margin: 12px 0 6px; }
+section h4 { font-size: 0.9em; color: var(--text); margin: 8px 0 4px; }
 
-  .date-list { list-style: none; }
-  .date-list li { padding: 4px 0; border-bottom: 1px dashed #eee; font-size: 0.9em; }
-  .date-list li strong { color: #8B0000; }
+.prayer-box { background: var(--prayer-bg); padding: 16px; border-radius: 8px; font-style: italic; font-size: 0.9em; margin-bottom: 8px; transition: background .3s; }
 
-  .footer { text-align: center; padding: 20px; font-size: 0.8em; color: #666; }
+/* Module accordion */
+.module { margin-bottom: 10px; }
+.module-header { background: var(--hover); padding: 12px 16px; border-radius: 8px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; transition: .2s; }
+.module-header:hover { background: var(--tag-bg); }
+.module-body { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+.module-body.open { max-height: 2000px; }
+.module-body-inner { padding: 12px 16px; }
+.topic { background: var(--bg); padding: 10px 14px; border-radius: 6px; margin-bottom: 8px; }
+.topic-name { font-weight: 600; font-size: 0.9em; margin-bottom: 4px; }
 
-  @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+/* Resource links */
+.resource-list { list-style: none; font-size: 0.85em; }
+.resource-list li { padding: 2px 0; }
+.resource-list a { color: var(--link); text-decoration: none; }
+.resource-list a:hover { text-decoration: underline; }
+.badge { display: inline-block; background: var(--accent); color: #fff; padding: 1px 8px; border-radius: 10px; font-size: 0.75em; margin-left: 4px; }
+.tag { display: inline-block; background: var(--tag-bg); padding: 2px 10px; border-radius: 12px; font-size: 0.78em; margin: 2px; transition: background .3s; }
+
+/* Link type badge */
+.link-type { display: inline-block; font-size: 0.7em; padding: 1px 7px; border-radius: 4px; margin-right: 4px; font-weight: 600; vertical-align: middle; }
+.link-type.doc { background: #1a73e8; color: #fff; }
+.link-type.sheet { background: #0f9d58; color: #fff; }
+.link-type.folder { background: #f9ab00; color: #000; }
+.link-type.video { background: #e74c3c; color: #fff; }
+.link-type.form { background: #7c3aed; color: #fff; }
+.link-type.pdf { background: #d32f2f; color: #fff; }
+.link-type.audio { background: #00acc1; color: #fff; }
+
+/* Overview toggle */
+.overview-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding-bottom: 0; }
+.overview-header h2 { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.overview-arrow { font-size: 1.3em; font-weight: 700; color: var(--accent); transition: transform .3s; }
+.overview-arrow.open { transform: rotate(45deg); }
+.overview-body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.overview-body.open { max-height: 400px; }
+.overview-body .stats { margin-top: 12px; }
+
+/* Checkbox progress */
+.progress-check { margin-right: 8px; cursor: pointer; accent-color: var(--accent); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.date-list { list-style: none; }
+.date-list li { padding: 4px 0; border-bottom: 1px dashed var(--border); font-size: 0.9em; }
+.date-list li strong { color: var(--accent); }
+.footer { text-align: center; padding: 20px; font-size: 0.8em; color: var(--text2); }
+
+/* Progress bar */
+.progress-bar-wrap { background: var(--border); border-radius: 10px; height: 6px; margin: 4px 0 12px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: var(--accent); border-radius: 10px; transition: width .5s; width: 0%; }
+.progress-text { font-size: 0.78em; color: var(--text2); text-align: right; }
+
+/* Hide items on search */
+.search-hidden { display: none !important; }
+
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); width: 260px; }
+  .sidebar.open { transform: translateX(0); }
+  .main { margin-left: 0; }
+  .hamburger { display: flex; align-items: center; justify-content: center; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  section { padding: 16px 18px; }
+  .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 1.1em; }
+}
+@media (max-width: 600px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: 1fr; }
+  header h1 { font-size: 1.4em; }
+  header p { font-size: 0.8em; }
+  .module-header { padding: 14px 12px; font-size: 0.9em; }
+  .topic { padding: 10px 10px; }
+  .resource-list { font-size: 0.82em; }
+  .resource-list li { padding: 3px 0; }
+  .link-type { font-size: 0.65em; padding: 2px 6px; }
+  .tag { font-size: 0.72em; padding: 3px 8px; }
+  .sidebar a { padding: 10px 16px; font-size: 0.85em; }
+  .date-list li { font-size: 0.85em; padding: 6px 0; }
+  .back-to-top { bottom: 12px; right: 12px; width: 40px; height: 40px; font-size: 1.1em; }
+  .module-body.open { max-height: 3000px; }
+  .module-body-inner { padding: 10px 12px; }
+  .prayer-box { font-size: 0.85em; padding: 12px; }
+  section h2 { font-size: 1.1em; }
+  .progress-check { width: 18px; height: 18px; }
+  .container { padding: 12px; }
+}
+@media (max-width: 380px) {
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  .stat-card { padding: 10px; }
+  .stat-card .num { font-size: 1.2em; }
+  .stat-card .label { font-size: 0.65em; }
+  header { padding: 20px 12px; border-radius: 8px; margin-bottom: 16px; }
+  header h1 { font-size: 1.2em; }
+  section { padding: 12px; border-radius: 8px; }
+  section h2 { font-size: 1em; }
+  .module-header { padding: 12px 10px; font-size: 0.85em; }
+  .container { padding: 8px; }
+  .hamburger { width: 36px; height: 36px; font-size: 1.1em; top: 8px; left: 8px; }
+  .search-wrap input { padding: 10px 12px; font-size: 0.9em; }
+  .grid-2, .grid-3 { gap: 8px; }
+  .sidebar { width: 240px; }
+  .module-body.open { max-height: 4000px; }
+  .back-to-top { width: 36px; height: 36px; font-size: 1em; bottom: 10px; right: 10px; }
+}
+
+/* UI/UX Improvements */
+html { scroll-behavior: smooth; }
+.back-to-top { position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px; border-radius: 50%; background: var(--accent); color: #fff; border: none; font-size: 1.3em; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.3); opacity: 0; transform: translateY(20px); transition: opacity .3s, transform .3s; z-index: 150; }
+.back-to-top.visible { opacity: 1; transform: translateY(0); }
+.back-to-top:hover { background: var(--accent2); }
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 90; }
+.sidebar-overlay.open { display: block; }
+.search-highlight { background: #ffe066; padding: 0 2px; border-radius: 2px; }
+.dark .search-highlight { background: #8a7000; color: #fff; }
+.module-body { transition: max-height .4s cubic-bezier(0.4,0,0.2,1); }
+.stat-card { transition: transform .2s, box-shadow .2s; }
+.stat-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px var(--shadow); }
+.sidebar a { transition: color .2s, background .2s, border-color .2s, padding-left .2s; }
+.sidebar a:hover { padding-left: 20px; }
+.topic { transition: background .2s; }
+.topic:hover { background: var(--tag-bg); }
+@media (max-width: 900px) {
+  .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 1.1em; }
+}
 </style>
 </head>
 <body>
+
+<button class="hamburger" aria-label="Toggle menu">☰</button>
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<div class="layout">
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+  <h2>AEMP Programme</h2>
+  <a href="#prayer">🙏 Prayer</a>
+  <a href="#registration">📝 Registration</a>
+  <a href="#overview">📊 Overview</a>
+  <div class="section-label">Modules</div>
+  <a href="#mod-1">1. Parish Guidelines</a>
+  <a href="#mod-2">2. Deanery Guidelines</a>
+  <a href="#mod-3">3. Leading Self</a>
+  <a href="#mod-4">4. Relating</a>
+  <a href="#mod-5">5. Collaborating</a>
+  <a href="#mod-6">6. Leading Teams</a>
+  <a href="#mod-7">7. Strengths</a>
+  <a href="#mod-8">8. Gifts</a>
+  <div class="section-label">Resources</div>
+  <a href="#calendar">📅 Calendar</a>
+  <a href="#tracking">📈 Progress</a>
+  <a href="#elections">🗳️ Elections</a>
+  <a href="#forms">📋 Forms</a>
+  <a href="#videos">🎬 Videos</a>
+  <a href="#extracted">📄 Extracted PDFs</a>
+  <a href="#strengths-ref">⭐ Strengths Themes</a>
+  <a href="#discernment-journeys">🕯️ Discernment</a>
+  <a href="#rules">📏 Rules</a>
+  <a href="#communication">💬 Connect</a>
+</nav>
+
+<!-- Main -->
+<div class="main">
 <div class="container">
 
 <header>
-  <h1>Archdiocesan Engagement for Mission Programme</h1>
+  <h1>Archdiocesan Engagement for Mission</h1>
   <p>Catholic Archdiocese of Lagos &bull; 2026 &bull; <em>Our Lady, Seat of Wisdom, Pray for Us</em></p>
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
 </header>
 
-<div class="quick-links">
-  <a href="#registration">Register</a>
-  <a href="#modules">Modules</a>
-  <a href="#calendar">Calendar</a>
-  <a href="#tracking">Track Progress</a>
-  <a href="#elections">Elections</a>
-  <a href="#forms">Forms &amp; Submissions</a>
-  <a href="#videos">Videos</a>
-  <a href="#extracted">Extracted PDFs</a>
-  <a href="#strengths-ref">Strengths Themes</a>
-  <a href="#discernment-journeys">Discernment Journeys</a>
-  <a href="#rules">Rules</a>
+<!-- Search -->
+<div class="search-wrap">
+  <input type="text" id="search" placeholder="Search modules, topics, resources..." oninput="doSearch(this.value)">
 </div>
 
-<section id="prayer">
-  <h2>AEMP Prayer</h2>
-  <div class="prayer-box">
-    Heavenly Father, we Your children of the Catholic Archdiocese of Lagos entrust ourselves and the Archdiocesan Engagement for Mission Programme into Your Hands. Grant us Your wisdom and discernment, as we navigate the changes and challenges that lie ahead. Bless the work of our hands, that the AEMP may contribute to the well-being, growth and salvation of all. May we, with the help of the Holy Spirit, contribute to this endeavor with integrity, creativity, and perseverance. Grant us your Spirit of Unity. Help us to recognize and put aside our selfish desires and work together in harmony towards our common goals of spiritual-commitment and engagement. May our words be filled with love and respect, and our actions reflect Your grace. Give us courage and strength to overcome any anxieties that keep us from accepting the changes needed in this programme. Help us to move forward with peace in our hearts during and after this transition. When we are daunted by the pressures of the AEMP, help us to depend on your strength and increase our faith. We ask all these through Jesus Christ, our Lord. Amen. <strong>Our Lady, Seat of Wisdom, Pray for Us. Our Lady, Queen of Nigeria, Pray for Us. Our Lady, Queen of Peace, Pray for Us.</strong>
+<!-- Overview stats -->
+<section id="overview">
+  <div class="overview-header" onclick="toggleSection('overviewBody', 'overviewArrow')">
+    <h2>Programme at a Glance</h2>
+    <span class="overview-arrow" id="overviewArrow">+</span>
   </div>
-  <a href="https://docs.google.com/document/d/1Uo4a63cU9iqMTZBNA48JugsqKRmYMcrwfsY7PCwUvpc/edit" style="font-size:0.85em;">Open full prayer document &rarr;</a>
+  <div class="overview-body" id="overviewBody">
+    <div class="stats" id="stats"></div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="overall-progress"></div></div>
+    <div class="progress-text" id="progress-txt">0% modules completed</div>
+  </div>
+</section>
+
+<section id="prayer">
+  <div class="overview-header" onclick="toggleSection('prayerBody', 'prayerArrow')">
+    <h2>🙏 AEMP Prayer</h2>
+    <span class="overview-arrow" id="prayerArrow">+</span>
+  </div>
+  <div class="overview-body" id="prayerBody">
+    <div class="prayer-box">
+      Heavenly Father, we Your children of the Catholic Archdiocese of Lagos entrust ourselves and the Archdiocesan Engagement for Mission Programme into Your Hands. Grant us Your wisdom and discernment, as we navigate the changes and challenges that lie ahead. Bless the work of our hands, that the AEMP may contribute to the well-being, growth and salvation of all. May we, with the help of the Holy Spirit, contribute to this endeavor with integrity, creativity, and perseverance. Grant us your Spirit of Unity. Help us to recognize and put aside our selfish desires and work together in harmony towards our common goals of spiritual-commitment and engagement. May our words be filled with love and respect, and our actions reflect Your grace. Give us courage and strength to overcome any anxieties that keep us from accepting the changes needed in this programme. Help us to move forward with peace in our hearts during and after this transition. When we are daunted by the pressures of the AEMP, help us to depend on your strength and increase our faith. We ask all these through Jesus Christ, our Lord. Amen. <strong>Our Lady, Seat of Wisdom, Pray for Us. Our Lady, Queen of Nigeria, Pray for Us. Our Lady, Queen of Peace, Pray for Us.</strong>
+    </div>
+    <a href="https://docs.google.com/document/d/1Uo4a63cU9iqMTZBNA48JugsqKRmYMcrwfsY7PCwUvpc/edit"><span class="link-type doc">DOC</span> Open full prayer document &rarr;</a>
+  </div>
 </section>
 
 <section id="registration">
-  <h2>Registration</h2>
-  <p><strong>Form:</strong> <a href="https://forms.gle/32zLgwt97KBewj879">https://forms.gle/32zLgwt97KBewj879</a></p>
-  <p><strong>Second Term:</strong> Starts July 14, 2026. WhatsApp invites emailed first week of June 2026.</p>
-  <p><strong>Self-Study?</strong> You can begin any module in any order. Exercises count as attendance.</p>
+  <div class="overview-header" onclick="toggleSection('registrationBody', 'registrationArrow')">
+    <h2>📝 Registration</h2>
+    <span class="overview-arrow" id="registrationArrow">+</span>
+  </div>
+  <div class="overview-body" id="registrationBody">
+    <p><strong>Form:</strong> <a href="https://forms.gle/32zLgwt97KBewj879"><span class="link-type form">FORM</span> Register here</a></p>
+    <p><strong>Second Term:</strong> Starts July 14, 2026. WhatsApp invites emailed first week of June 2026.</p>
+    <p><strong>Self-Study?</strong> Any module, any order. Exercises count as attendance.</p>
+  </div>
 </section>
 
+<!-- Modules -->
 <section id="modules">
-  <h2>8 Modules &mdash; Full Curriculum</h2>
+  <h2>📚 8 Modules &mdash; Full Curriculum</h2>
 
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 1: Parish Guidelines <span>+</span></div>
-    <div class="module-body">
-      <p><strong>Covers:</strong> PPC, PLC, PFC, HRM</p>
-      <p><strong>Prep Qs:</strong> <a href="https://docs.google.com/document/d/1nERt7HLtWpcTpBY0lTddq2z-9OsH8QhW6w0QEBYzK-s/edit">View</a></p>
-      <p><strong>Materials:</strong> <a href="https://drive.google.com/drive/folders/1pLYO24xhp0Yk29oKzclOyV7SiXvP0YZA">Guidelines Folder</a> (PDFs, case studies, videos)</p>
-      <p><strong>Submit:</strong> <a href="https://forms.gle/CR44J5iQ61ULRCFr8">PPC/PLC/PFC/HRM form</a></p>
-      <h4>Assignments</h4>
-      <ul class="resource-list">
-        <li>Read St. Thomas Parish Winneba case study</li>
-        <li>Compare Parish Pastoral &amp; Laity Guidelines with your parish (4 aligned + 4 non-aligned)</li>
-        <li>Compare Finance &amp; Admin Guidelines (4 + 4)</li>
-        <li>Compare HRM Guidelines for clergy and laity (4 + 4)</li>
-        <li>Reflect: what to do more/less/start/stop for holiness and evangelization</li>
-      </ul>
+  <div class="module" id="mod-1">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="1" onchange="updateProgress()"> Module 1: Parish Guidelines</span>
+      <span>+</span>
     </div>
-  </div>
-
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 2: Deanery &amp; Archdiocesan Guidelines <span>+</span></div>
     <div class="module-body">
-      <p><strong>Covers:</strong> DPC, DLC, LALC</p>
-      <p><strong>Prep Qs (Deanery):</strong> <a href="https://docs.google.com/document/d/1G0qlkdMvJAeIEjOnoEUpN3AsYLN6JwBZ/edit">View</a></p>
-      <p><strong>Prep Qs (Archdiocesan/LALC):</strong> <a href="https://docs.google.com/document/d/142T2ySqLvAFHs6qUzNVdrhRHUL-VvfHDQFEPIrnlnw8/edit">View</a></p>
-      <p><strong>Submit:</strong> <a href="https://forms.gle/R3UiVmMDHUGw9KMMA">DLC/LALC form</a></p>
-      <h4>Key Resources</h4>
-      <ul class="resource-list">
-        <li><a href="https://drive.google.com/drive/folders/1zGCNaXJbBBNhlupDWRHoiYNIVpt-oqEE">Approved Archdiocesan Governance Guidelines</a> (all 9 PDFs)</li>
-        <li>Case study: Eka Deanery</li>
-        <li>Best Fit exercise</li>
-        <li><a href="https://drive.google.com/drive/folders/1LyLApiZ5JSNpCiKYfxjbwMyQknaU-o-1">Constitution of Laity Committees folder</a></li>
-      </ul>
-      <h4>Constitution Folder Contents</h4>
-      <ul class="resource-list">
-        <li><strong>Subfolders:</strong> Archdiocesan Laity Council, Deanery Councils, Parish Councils (seminar materials &amp; videos)</li>
-        <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1rCyD3c58fGS_pzchp9yQ2qnodTBYZ1bf">10. The Purpose of Lay Organisations.pdf</a></li>
-        <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1Ez1AuYj_WQJGU4xGaC2cDUYbSsl5brK_">9. Catholic Social Teachings Summary.pdf</a></li>
-        <li><a href="https://drive.google.com/file/d/1RZbU39uTkzKIWmB3iyliRetf3pEiE0Qg/view">Archdiocesan Guidelines - 2010-2024.mp4</a></li>
-        <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1SZSc6MqattQ9errZ2YB8R6u7DkTjglwn">Guidelines for Constitution of Archdiocesan Pastoral Committees.docx</a></li>
-        <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1vm6hiQSuOBN8l9afNpFylU0FBiWjsZtF">Guidelines for Constitution of Laity Committees (Arch/Dean/Parish).docx</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 3: Leading Self for Mission <span>+</span></div>
-    <div class="module-body">
-      <p><strong>3 Topics:</strong> Self-Awareness, Stress Management, Problem Solving</p>
-      <p><strong>Submit (all 3):</strong> <a href="https://forms.gle/KNC8Asdh548xmXiL8">Managing Self form</a></p>
-
-      <div class="topic">
-        <div class="topic-name">1. Developing Self-Awareness for Mission</div>
+      <div class="module-body-inner">
+        <p><strong>Covers:</strong> PPC, PLC, PFC, HRM</p>
+        <p><strong>Prep Qs:</strong> <a href="https://docs.google.com/document/d/1nERt7HLtWpcTpBY0lTddq2z-9OsH8QhW6w0QEBYzK-s/edit"><span class="link-type doc">DOC</span> View</a></p>
+        <p><strong>Materials:</strong> <a href="https://drive.google.com/drive/folders/1pLYO24xhp0Yk29oKzclOyV7SiXvP0YZA"><span class="link-type folder">FOLDER</span> Guidelines Folder</a></p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/CR44J5iQ61ULRCFr8"><span class="link-type form">FORM</span> PPC/PLC/PFC/HRM form</a></p>
+        <h4>Assignments</h4>
         <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/15U8uFvMbp2JsYHJg7P9HoQh53fnGEQJ9/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1BYujfEn441y08VbVzLdCzp6I_AzFMwfD/edit">Diagnostic Surveys (6 sheets)</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit">Gallup Top 5 Talent Themes</a></li>
-          <li><a href="https://spiritualgiftsinventory.com/quiz/">Spiritual Gifts Inventory Quiz</a></li>
-          <li><a href="https://drive.google.com/file/d/1OpvMAgGBKNj8iKco0EfCbwtDsPGtfabw/view">Spiritual Gifts PDF</a></li>
-          <li><a href="https://drive.google.com/file/d/1Itb290RDT0IMYwsKc0wcOHrcaY2SZaXY/view">Looking Through the Glass</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">2. Managing Personal Stress for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1I3qt7NKjhzdM-GH3hdc1InBzL4SRoo4V/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1-rYLSrCN7-lAnk3xAdhpDWAbimj1hLhv/edit">Diagnostic Surveys</a></li>
-          <li><a href="https://drive.google.com/file/d/1EuI0x753OQniQXx7rqAY7X4VRPG-07wR/view">Mabel Case Study</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">3. Solving Problems for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1vgi4ZcNZAf6JcqykrQvZExSBFf550Vsf/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1ooH7iNGLN3lm4cdIfA4ZQJ8EL83hQm5_/edit">Diagnostic Surveys</a></li>
-          <li><a href="https://drive.google.com/file/d/1gsouMf2yDDKNve_dYe95w21Tff-mXD-J/view">Model of Problem Solving</a></li>
-          <li><a href="https://drive.google.com/file/d/11Xz2bf6IiLctZQVEjTB8wASqB8nrX5iP/view">St. Peter's Catholic Church Case</a></li>
+          <li><input type="checkbox" class="progress-check" data-task="m1a1" onchange="updateProgress()"> Read St. Thomas Parish Winneba case study</li>
+          <li><input type="checkbox" class="progress-check" data-task="m1a2" onchange="updateProgress()"> Compare Parish Pastoral &amp; Laity Guidelines with your parish (4 aligned + 4 non-aligned)</li>
+          <li><input type="checkbox" class="progress-check" data-task="m1a3" onchange="updateProgress()"> Compare Finance &amp; Admin Guidelines (4 + 4)</li>
+          <li><input type="checkbox" class="progress-check" data-task="m1a4" onchange="updateProgress()"> Compare HRM Guidelines for clergy and laity (4 + 4)</li>
+          <li><input type="checkbox" class="progress-check" data-task="m1a5" onchange="updateProgress()"> Reflect: what to do more/less/start/stop for holiness and evangelization</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 4: Relating for Mission <span>+</span></div>
+  <div class="module" id="mod-2">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="2" onchange="updateProgress()"> Module 2: Deanery &amp; Archdiocesan Guidelines</span>
+      <span>+</span>
+    </div>
     <div class="module-body">
-      <p><strong>3 Topics:</strong> Supportive Communication, Credibility &amp; Influence, Conflict Management</p>
-      <p><strong>Submit (all 3):</strong> <a href="https://forms.gle/YZBd6mEPwtkwgsdYA">Relating form</a></p>
-
-      <div class="topic">
-        <div class="topic-name">4. Communicating Supportively for Mission</div>
+      <div class="module-body-inner">
+        <p><strong>Covers:</strong> DPC, DLC, LALC</p>
+        <p><strong>Prep Qs (Deanery):</strong> <a href="https://docs.google.com/document/d/1G0qlkdMvJAeIEjOnoEUpN3AsYLN6JwBZ/edit"><span class="link-type doc">DOC</span> View</a></p>
+        <p><strong>Prep Qs (LALC):</strong> <a href="https://docs.google.com/document/d/142T2ySqLvAFHs6qUzNVdrhRHUL-VvfHDQFEPIrnlnw8/edit"><span class="link-type doc">DOC</span> View</a></p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/R3UiVmMDHUGw9KMMA"><span class="link-type form">FORM</span> DLC/LALC form</a></p>
+        <h4>Resources</h4>
         <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1OSOfEwLMuGznzgVVPaQ0U_mUfSd9x3d0/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/17zaR3dkjt63zE6YeITdl8z9zXHXvytkH/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1TjIeC3IpStEaYEsZFBzV48tSyJo2n98J/view">8 Principles of Supportive Communication</a></li>
-          <li><a href="https://drive.google.com/file/d/1THbNgHTX338gOvZ2BNxRgrEzZiSkv2WE/view">Building Positive Relationships Cases</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">5. Gaining Credibility and Influence for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1tIXsAVnQ5tnXz2uNfZ2fbx_6pGNRpYzT/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1MVpY2HSkQUlt5iP7Yh7-J3qEAigSj2o2/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1VMuA04UUZf2xzFocXXjtbhTHKUygXHF4/view">New Parish Laity Council Chairman Case</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">6. Managing Conflicts for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1QsBOQ0DjOB_ohyuv89Fq1X3Ydn24LG_B/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1dY_fOUgQTQsrhKV3scxgPfsk4tMolT4u/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1zGbAgf3QcETJKMyjc5zXl8iGydSv0bIa/view">4 Phases of Collaborative Problem Solving</a></li>
-          <li><a href="https://drive.google.com/file/d/1HkTiMQKZ3mWN3PlIWVJLaGxLcndeqE-G/view">Can Larry Fit In? Case</a></li>
+          <li><a href="https://drive.google.com/drive/folders/1zGCNaXJbBBNhlupDWRHoiYNIVpt-oqEE"><span class="link-type folder">FOLDER</span> Approved Governance Guidelines</a> (9 PDFs)</li>
+          <li><a href="https://drive.google.com/drive/folders/1LyLApiZ5JSNpCiKYfxjbwMyQknaU-o-1"><span class="link-type folder">FOLDER</span> Constitution of Laity Committees</a></li>
+          <li><strong>Subfolders:</strong> Archdiocesan Laity Council, Deanery Councils, Parish Councils</li>
+          <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1rCyD3c58fGS_pzchp9yQ2qnodTBYZ1bf"><span class="link-type pdf">PDF</span> 10. The Purpose of Lay Organisations</a> <em>(corrupted, HTTP 500)</em></li>
+          <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1Ez1AuYj_WQJGU4xGaC2cDUYbSsl5brK_"><span class="link-type pdf">PDF</span> 9. Catholic Social Teachings Summary</a></li>
+          <li><a href="https://drive.google.com/file/d/1RZbU39uTkzKIWmB3iyliRetf3pEiE0Qg/view"><span class="link-type video">VIDEO</span> Archdiocesan Guidelines 2010-2024.mp4</a></li>
+          <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1SZSc6MqattQ9errZ2YB8R6u7DkTjglwn"><span class="link-type doc">DOCX</span> Constitution of Archdiocesan Pastoral Committees</a></li>
+          <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1vm6hiQSuOBN8l9afNpFylU0FBiWjsZtF"><span class="link-type doc">DOCX</span> Constitution of Laity Committees</a></li>
         </ul>
       </div>
     </div>
   </div>
 
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 5: Collaborating for Mission <span>+</span></div>
+  <div class="module" id="mod-3">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="3" onchange="updateProgress()"> Module 3: Leading Self for Mission</span>
+      <span>+</span>
+    </div>
     <div class="module-body">
-      <p><strong>3 Topics:</strong> Motivating, Empowering, Delegating</p>
-      <p><strong>Submit (all 3):</strong> <a href="https://forms.gle/RkYv3pxLHFnvyiYn8">Collaborating form</a></p>
-
-      <div class="topic">
-        <div class="topic-name">7. Motivating for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1h0OPX8odc2J6j300RiUkScfoeynbRDGq/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1F9YwcRacWXQooYzKtu7GLgTsHccuPUNk/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1ZvACCl_YucMSLYg7I-_0vczhCcYegSuq/view">Motivating Others Case Study</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">8. Empowering for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1PY5zTeVUy4DBOi-AbNS_IPXTMm5bbdc8/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1dntwOxy45ZhWNzatD03mdx9HD17wxSg9/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1g4Q22Ww-Iuv6YwcGOp4G7R0kHHUqDShf/view">Minding the Store Case Study</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">9. Delegating for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1cFd6Wo0Lnv_10olDXb_H4tgBQWzf6fuf/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1dntwOxy45ZhWNzatD03mdx9HD17wxSg9/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1sImLHI1GQcm3jOdMoR7XBYhxAAdGB1vx/view">Delegating Case Study</a></li>
-        </ul>
+      <div class="module-body-inner">
+        <p><strong>3 Topics:</strong> Self-Awareness, Stress Mgmt, Problem Solving</p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/KNC8Asdh548xmXiL8"><span class="link-type form">FORM</span> Managing Self form</a></p>
+        <div class="topic">
+          <div class="topic-name">1. Developing Self-Awareness for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/15U8uFvMbp2JsYHJg7P9HoQh53fnGEQJ9/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1BYujfEn441y08VbVzLdCzp6I_AzFMwfD/edit"><span class="link-type sheet">SHEET</span> Diagnostic Surveys (6)</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit"><span class="link-type sheet">SHEET</span> Gallup Top 5 Talent Themes</a></li>
+            <li><a href="https://spiritualgiftsinventory.com/quiz/"><span class="link-type form">QUIZ</span> Spiritual Gifts Inventory</a></li>
+            <li><a href="https://drive.google.com/file/d/1OpvMAgGBKNj8iKco0EfCbwtDsPGtfabw/view"><span class="link-type pdf">PDF</span> Spiritual Gifts (14p)</a></li>
+            <li><a href="https://drive.google.com/file/d/1Itb290RDT0IMYwsKc0wcOHrcaY2SZaXY/view"><span class="link-type pdf">PDF</span> Looking Through the Glass</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">2. Managing Personal Stress for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1I3qt7NKjhzdM-GH3hdc1InBzL4SRoo4V/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1-rYLSrCN7-lAnk3xAdhpDWAbimj1hLhv/edit"><span class="link-type sheet">SHEET</span> Diagnostic Surveys</a></li>
+            <li><a href="https://drive.google.com/file/d/1EuI0x753OQniQXx7rqAY7X4VRPG-07wR/view"><span class="link-type pdf">PDF</span> Mabel Case Study</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">3. Solving Problems for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1vgi4ZcNZAf6JcqykrQvZExSBFf550Vsf/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1ooH7iNGLN3lm4cdIfA4ZQJ8EL83hQm5_/edit"><span class="link-type sheet">SHEET</span> Diagnostic Surveys</a></li>
+            <li><a href="https://drive.google.com/file/d/1gsouMf2yDDKNve_dYe95w21Tff-mXD-J/view"><span class="link-type pdf">PDF</span> Model of Problem Solving</a></li>
+            <li><a href="https://drive.google.com/file/d/11Xz2bf6IiLctZQVEjTB8wASqB8nrX5iP/view"><span class="link-type pdf">PDF</span> St. Peter's Church Case</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 6: Leading &amp; Building Teams for Mission <span>+</span></div>
+  <div class="module" id="mod-4">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="4" onchange="updateProgress()"> Module 4: Relating for Mission</span>
+      <span>+</span>
+    </div>
     <div class="module-body">
-      <p><strong>3 Topics:</strong> Leading Teams, Effective Meetings, Positive Change</p>
-      <p><strong>Submit (all 3):</strong> <a href="https://forms.gle/FHjjbAe5qosCCwjY7">Leading Teams form</a></p>
-
-      <div class="topic">
-        <div class="topic-name">10. Leading and Building Teams and Groups for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1VmHM3OiUqQPXX-aim3mKZV1UFOZlC1V_/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1W798ECdZXJMqlUkCvB9IFm4JambmYqyC/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1eoIuGRGAA-Lz1Uw-R8FJu96RqjpgFqky/view">Handouts: Leading Your Team</a></li>
-          <li><a href="https://drive.google.com/file/d/14PFWQ_f0HPJLv4s6xHYtuIsnRlRRsdW8/view">Pastoral Competences</a></li>
-          <li><a href="https://drive.google.com/file/d/1JPGsvwD_vThVw_9r-G0S6UjwUlOeIdGp/view">Group Roles &amp; Trust Building</a></li>
-          <li><a href="https://www.youtube.com/watch?v=nRYRZg8YSso">Team Building Video</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">11. Conducting Effective Meetings for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1Mo2sJNP2Eq6nmmPpUWF6_1GsGdyaxotN/edit">Prep Questions</a></li>
-          <li><a href="https://drive.google.com/file/d/1VzvaMpGNg27RYzKLu7QQUzw65NNwlK8r/view">How to Run a Meeting</a></li>
-          <li><a href="https://drive.google.com/file/d/1CGqkZ5wNrQicjPYcJT7g-vhkK-XnnoFF/view">Planning Effective Meetings</a></li>
-          <li><a href="https://drive.google.com/file/d/1KPcObj_PcGlFWlcgzQcF-IXmfbJkRyyx/view">Managing Meeting Process</a></li>
-          <li><a href="https://drive.google.com/file/d/18d2_fTHR6VEOsPhGyAqxhCfsoLlMN5-x/view">Meeting Rules</a></li>
-          <li><a href="https://drive.google.com/file/d/1cX4L2Hz4Wiyu6sPI0pHYwL-ipV95X8A6/view">St. Albert Catholic Church Case</a></li>
-        </ul>
-      </div>
-
-      <div class="topic">
-        <div class="topic-name">12. Leading Positive Change for Mission</div>
-        <ul class="resource-list">
-          <li><a href="https://docs.google.com/document/d/1Q2QKkhqkHWYB8MPwLIDwfbBFCCTh3T8t/edit">Prep Questions</a></li>
-          <li><a href="https://docs.google.com/spreadsheets/d/1d-WmE8HOirUJY-TBJKacWV_h9MfZfyXO/edit">Diagnostic Survey</a></li>
-          <li><a href="https://drive.google.com/file/d/1soB2nVbyvCagw_vSwZArzx3NxLdymd7-/view">Caselets &amp; Exercises</a></li>
-        </ul>
+      <div class="module-body-inner">
+        <p><strong>3 Topics:</strong> Communication, Credibility, Conflict</p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/YZBd6mEPwtkwgsdYA"><span class="link-type form">FORM</span> Relating form</a></p>
+        <div class="topic">
+          <div class="topic-name">4. Communicating Supportively for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1OSOfEwLMuGznzgVVPaQ0U_mUfSd9x3d0/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/17zaR3dkjt63zE6YeITdl8z9zXHXvytkH/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1TjIeC3IpStEaYEsZFBzV48tSyJo2n98J/view"><span class="link-type pdf">PDF</span> 8 Principles of Supportive Communication</a></li>
+            <li><a href="https://drive.google.com/file/d/1THbNgHTX338gOvZ2BNxRgrEzZiSkv2WE/view"><span class="link-type pdf">PDF</span> Building Positive Relationships Cases</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">5. Gaining Credibility &amp; Influence</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1tIXsAVnQ5tnXz2uNfZ2fbx_6pGNRpYzT/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1MVpY2HSkQUlt5iP7Yh7-J3qEAigSj2o2/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1VMuA04UUZf2xzFocXXjtbhTHKUygXHF4/view"><span class="link-type pdf">PDF</span> New PLC Chairman Case</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">6. Managing Conflicts for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1QsBOQ0DjOB_ohyuv89Fq1X3Ydn24LG_B/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1dY_fOUgQTQsrhKV3scxgPfsk4tMolT4u/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1zGbAgf3QcETJKMyjc5zXl8iGydSv0bIa/view"><span class="link-type pdf">PDF</span> 4 Phases of Collaborative Problem Solving</a></li>
+            <li><a href="https://drive.google.com/file/d/1HkTiMQKZ3mWN3PlIWVJLaGxLcndeqE-G/view"><span class="link-type pdf">PDF</span> Can Larry Fit In? Case</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 7: Strengths Discernment <span>+</span></div>
+  <div class="module" id="mod-5">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="5" onchange="updateProgress()"> Module 5: Collaborating for Mission</span>
+      <span>+</span>
+    </div>
     <div class="module-body">
-      <p><strong>4-week programme</strong> (Topics 4-7) &bull; Weekly exercises, reflections &amp; journaling</p>
-      <p><strong>Materials folder:</strong> <a href="https://drive.google.com/drive/folders/1zOI-LAQU1ccdd2qf3-EvqG6tNo0owBFt">Open</a></p>
-      <ul class="resource-list">
-        <li><a href="https://docs.google.com/document/d/1UIeXml87YPmsaXskeserc1vW4Vj2At4j4_g0JC52xpU/edit">2025 Strengths Discernment - Weekly Exercises (Google Docs)</a></li>
-        <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=166oz6Wg1qj5T1uIPoJ4EsBpB0lH4KrhN">Weekly Exercises (.docx)</a> | <a href="https://drive.google.com/uc?export=download&confirm=t&id=1Ma_E4TMe-gRbWzv6QICoSyy_v9mwe2lQ">(.pdf - 20 pages, extracted)</a></li>
-        <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1X8OXBpHXpNcU-CQ6j9KS8fWqXRJBQ2gr">Strengths Discernment - Weekly Submissions - 2026.docx</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/1OzeMWtGW1x8III401r8BdnfNR4ss-N_W/edit">WEEK 1-4 Daily Reflections &amp; Journaling Template.xlsx</a></li>
-      </ul>
-      <h4>Curriculum (extracted from 20-page PDF)</h4>
-      <div class="topic">
-        <div class="topic-name">Week 1: Signature Themes &mdash; Discovering Your Talent Themes</div>
-        <ul class="resource-list">
-          <li>Self-rate the 34 CliftonStrengths themes (1-3 scale) or purchase Gallup assessment</li>
-          <li>Create a Signature Themes collage for each of your Top 5</li>
-          <li>Post 1 collage photo + reflection per theme in group WhatsApp</li>
-        </ul>
+      <div class="module-body-inner">
+        <p><strong>3 Topics:</strong> Motivating, Empowering, Delegating</p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/RkYv3pxLHFnvyiYn8"><span class="link-type form">FORM</span> Collaborating form</a></p>
+        <div class="topic">
+          <div class="topic-name">7. Motivating for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1h0OPX8odc2J6j300RiUkScfoeynbRDGq/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1F9YwcRacWXQooYzKtu7GLgTsHccuPUNk/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1ZvACCl_YucMSLYg7I-_0vczhCcYegSuq/view"><span class="link-type pdf">PDF</span> Motivating Others Case</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">8. Empowering for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1PY5zTeVUy4DBOi-AbNS_IPXTMm5bbdc8/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1dntwOxy45ZhWNzatD03mdx9HD17wxSg9/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1g4Q22Ww-Iuv6YwcGOp4G7R0kHHUqDShf/view"><span class="link-type pdf">PDF</span> Minding the Store Case</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">9. Delegating for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1cFd6Wo0Lnv_10olDXb_H4tgBQWzf6fuf/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1dntwOxy45ZhWNzatD03mdx9HD17wxSg9/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1sImLHI1GQcm3jOdMoR7XBYhxAAdGB1vx/view"><span class="link-type pdf">PDF</span> Delegating Case Study</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="topic">
-        <div class="topic-name">Week 2: Living Your Strengths &mdash; Making Talents Productive</div>
-        <ul class="resource-list">
-          <li>Read Gallup descriptions &amp; watch theme webinars for each of your 5 themes</li>
-          <li>Identify 3+ examples of how each theme already shows up in daily life</li>
-          <li>Identify new ways to use each theme for family, work, parish, community</li>
-          <li>Post 1 theme per day (Mon-Fri)</li>
-        </ul>
-      </div>
-      <div class="topic">
-        <div class="topic-name">Week 3: Developing Your Strengths &mdash; Aware &amp; Proactive Use</div>
-        <ul class="resource-list">
-          <li>For each theme: what if I used it more? what if I used it less?</li>
-          <li>Identify one action for each theme to use it more effectively</li>
-          <li>Find a person who exemplifies each theme &amp; what you can learn</li>
-          <li>Complete daily journaling template (XLSX)</li>
-        </ul>
-      </div>
-      <div class="topic">
-        <div class="topic-name">Week 4: Sustaining Your Strengths &mdash; Integration for Mission</div>
-        <ul class="resource-list">
-          <li>How your 5 themes work together as a team inside you</li>
-          <li>Identify blind spots (overuse/misuse) of each theme</li>
-          <li>Write a Strengths Partnership Plan with someone who complements you</li>
-          <li>Write your personal mission statement integrating your Top 5 themes</li>
-        </ul>
-      </div>
-      <h4>Linked Resources</h4>
-      <ul class="resource-list">
-        <li><a href="https://docs.google.com/document/d/18hjxbg-dh6u6zUA-AUxQErcpCZvFCu0w/edit">Spiritual Discernment Journeys - Guidelines for Participants</a></li>
-        <li><a href="https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit">34 CliftonStrengths Self-Assessment Sheet</a></li>
-        <li><a href="https://drive.google.com/file/d/1AaP2Usig_lpx21wz_N7ethuDz6faA8EA/view">LYS - Chapter 1.m4a (Lead Yourself First audio)</a></li>
-        <li><a href="https://www.youtube.com/watch?v=ZrxFar1lB5U">Strengths video reference 1</a></li>
-        <li><a href="https://www.youtube.com/watch?v=10Kxq8okEtE">Strengths video reference 2</a></li>
-      </ul>
-      <p><strong>Submit:</strong> <a href="https://forms.gle/dcUGhCbFfHJCgZKq5">Strengths form</a></p>
     </div>
   </div>
 
-  <div class="module">
-    <div class="module-header" onclick="this.nextElementSibling.classList.toggle('open')">Module 8: Gifts Discernment <span>+</span></div>
+  <div class="module" id="mod-6">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="6" onchange="updateProgress()"> Module 6: Leading &amp; Building Teams</span>
+      <span>+</span>
+    </div>
     <div class="module-body">
-      <p><strong>4-week programme</strong> (Topics 11-14) &bull; Weekly exercises, reflections &amp; journaling</p>
-      <p><strong>Materials folder:</strong> <a href="https://drive.google.com/drive/folders/1qAuMtb8ZjHDZF2_757yRyveayGjM8Il9">Open</a></p>
-      <ul class="resource-list">
-        <li>2025 Gifts Discernment Weekly Exercises (Word/PDF)</li>
-        <li>2025 Gifts Discernment Weekly Submission.docx</li>
-        <li>WEEK 1-4 Daily Reflections &amp; Journaling Template.xlsx</li>
-      </ul>
-      <p><strong>Note for music ministry:</strong> <em>Musicianship</em> is listed as a 'Leaves' category spiritual gift. The journaling exercises help you identify how your musical talent serves evangelization.</p>
-      <p><strong>Submit:</strong> <a href="https://forms.gle/ZZWwkfUVgwKK5u6i9">Gifts form</a></p>
+      <div class="module-body-inner">
+        <p><strong>3 Topics:</strong> Leading Teams, Meetings, Change</p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/FHjjbAe5qosCCwjY7"><span class="link-type form">FORM</span> Leading Teams form</a></p>
+        <div class="topic">
+          <div class="topic-name">10. Leading and Building Teams for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1VmHM3OiUqQPXX-aim3mKZV1UFOZlC1V_/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1W798ECdZXJMqlUkCvB9IFm4JambmYqyC/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1eoIuGRGAA-Lz1Uw-R8FJu96RqjpgFqky/view"><span class="link-type pdf">PDF</span> Leading Your Team Handouts</a></li>
+            <li><a href="https://drive.google.com/file/d/14PFWQ_f0HPJLv4s6xHYtuIsnRlRRsdW8/view"><span class="link-type pdf">PDF</span> Pastoral Competences</a></li>
+            <li><a href="https://drive.google.com/file/d/1JPGsvwD_vThVw_9r-G0S6UjwUlOeIdGp/view"><span class="link-type pdf">PDF</span> Group Roles &amp; Trust Building</a></li>
+            <li><a href="https://www.youtube.com/watch?v=nRYRZg8YSso"><span class="link-type video">VIDEO</span> Team Building Video</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">11. Conducting Effective Meetings</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1Mo2sJNP2Eq6nmmPpUWF6_1GsGdyaxotN/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://drive.google.com/file/d/1VzvaMpGNg27RYzKLu7QQUzw65NNwlK8r/view"><span class="link-type pdf">PDF</span> How to Run a Meeting</a></li>
+            <li><a href="https://drive.google.com/file/d/1CGqkZ5wNrQicjPYcJT7g-vhkK-XnnoFF/view"><span class="link-type pdf">PDF</span> Planning Effective Meetings</a></li>
+            <li><a href="https://drive.google.com/file/d/1KPcObj_PcGlFWlcgzQcF-IXmfbJkRyyx/view"><span class="link-type pdf">PDF</span> Managing Meeting Process</a></li>
+            <li><a href="https://drive.google.com/file/d/18d2_fTHR6VEOsPhGyAqxhCfsoLlMN5-x/view"><span class="link-type pdf">PDF</span> Meeting Rules</a></li>
+            <li><a href="https://drive.google.com/file/d/1cX4L2Hz4Wiyu6sPI0pHYwL-ipV95X8A6/view"><span class="link-type pdf">PDF</span> St. Albert Church Case</a></li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">12. Leading Positive Change for Mission</div>
+          <ul class="resource-list">
+            <li><a href="https://docs.google.com/document/d/1Q2QKkhqkHWYB8MPwLIDwfbBFCCTh3T8t/edit"><span class="link-type doc">DOC</span> Prep Questions</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1d-WmE8HOirUJY-TBJKacWV_h9MfZfyXO/edit"><span class="link-type sheet">SHEET</span> Diagnostic Survey</a></li>
+            <li><a href="https://drive.google.com/file/d/1soB2nVbyvCagw_vSwZArzx3NxLdymd7-/view"><span class="link-type pdf">PDF</span> Caselets &amp; Exercises</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
-  <p style="margin-top:12px;font-size:0.85em;"><strong>All diagnostic surveys (10+):</strong> <a href="https://drive.google.com/drive/folders/183FC5UEqnRI-mpCzQP5ynhmMx2mjTqzv">Leadership Discovery Workshop Resources</a></p>
+  <div class="module" id="mod-7">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="7" onchange="updateProgress()"> Module 7: Strengths Discernment</span>
+      <span>+</span>
+    </div>
+    <div class="module-body">
+      <div class="module-body-inner">
+        <p><strong>4-week programme</strong> (Topics 4-7) &bull; Weekly exercises, reflections &amp; journaling</p>
+        <p><strong>Materials:</strong> <a href="https://drive.google.com/drive/folders/1zOI-LAQU1ccdd2qf3-EvqG6tNo0owBFt"><span class="link-type folder">FOLDER</span> Open folder</a></p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/dcUGhCbFfHJCgZKq5"><span class="link-type form">FORM</span> Strengths form</a></p>
+        <ul class="resource-list">
+          <li><a href="https://docs.google.com/document/d/1UIeXml87YPmsaXskeserc1vW4Vj2At4j4_g0JC52xpU/edit"><span class="link-type doc">DOC</span> Weekly Exercises (Google Docs)</a></li>
+          <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=166oz6Wg1qj5T1uIPoJ4EsBpB0lH4KrhN"><span class="link-type doc">DOCX</span> Weekly Exercises</a> | <a href="https://drive.google.com/uc?export=download&confirm=t&id=1Ma_E4TMe-gRbWzv6QICoSyy_v9mwe2lQ"><span class="link-type pdf">PDF</span> (20p, extracted)</a></li>
+          <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1X8OXBpHXpNcU-CQ6j9KS8fWqXRJBQ2gr"><span class="link-type doc">DOCX</span> Weekly Submissions 2026</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1OzeMWtGW1x8III401r8BdnfNR4ss-N_W/edit"><span class="link-type sheet">SHEET</span> Journaling Template (Weeks 1-4)</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit"><span class="link-type sheet">SHEET</span> 34 CliftonStrengths Self-Assessment</a></li>
+          <li><a href="https://drive.google.com/file/d/1AaP2Usig_lpx21wz_N7ethuDz6faA8EA/view"><span class="link-type audio">AUDIO</span> LYS - Chapter 1 (Lead Yourself First)</a></li>
+          <li><a href="https://www.youtube.com/watch?v=ZrxFar1lB5U"><span class="link-type video">VIDEO</span> Strengths Ref 1</a> | <a href="https://www.youtube.com/watch?v=10Kxq8okEtE"><span class="link-type video">VIDEO</span> Ref 2</a></li>
+        </ul>
+        <h4>Curriculum</h4>
+        <div class="topic">
+          <div class="topic-name">Week 1: Signature Themes</div>
+          <ul class="resource-list">
+            <li>Self-rate 34 themes (1-3) or take Gallup assessment</li>
+            <li>Create Signature Themes collage for each Top 5</li>
+            <li>Post 1 collage + reflection per theme on WhatsApp</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">Week 2: Living Your Strengths</div>
+          <ul class="resource-list">
+            <li>Read Gallup descriptions + watch theme webinars</li>
+            <li>3+ examples per theme from daily life</li>
+            <li>New ways to use each theme (family, work, parish)</li>
+            <li>Post 1 theme/day (Mon-Fri)</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">Week 3: Developing Your Strengths</div>
+          <ul class="resource-list">
+            <li>What if I used this more? What if less?</li>
+            <li>One action per theme to use it better</li>
+            <li>Find someone who exemplifies each theme</li>
+            <li>Complete daily journaling template</li>
+          </ul>
+        </div>
+        <div class="topic">
+          <div class="topic-name">Week 4: Sustaining Your Strengths</div>
+          <ul class="resource-list">
+            <li>How 5 themes work together as a team</li>
+            <li>Identify blind spots (overuse/misuse)</li>
+            <li>Strengths Partnership Plan with complementary person</li>
+            <li>Personal mission statement integrating Top 5</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="module" id="mod-8">
+    <div class="module-header" onclick="toggleModule(this)">
+      <span><input type="checkbox" class="progress-check" data-module="8" onchange="updateProgress()"> Module 8: Gifts Discernment</span>
+      <span>+</span>
+    </div>
+    <div class="module-body">
+      <div class="module-body-inner">
+        <p><strong>4-week programme</strong> (Topics 11-14)</p>
+        <p><strong>Materials:</strong> <a href="https://drive.google.com/drive/folders/1qAuMtb8ZjHDZF2_757yRyveayGjM8Il9"><span class="link-type folder">FOLDER</span> Open folder</a></p>
+        <p><strong>Submit:</strong> <a href="https://forms.gle/ZZWwkfUVgwKK5u6i9"><span class="link-type form">FORM</span> Gifts form</a></p>
+        <p><strong>Note for music ministry:</strong> <em>Musicianship</em> is a 'Leaves' category spiritual gift. Journaling helps you identify how your talent serves evangelization.</p>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:12px;font-size:0.85em;"><strong>All diagnostic surveys:</strong> <a href="https://drive.google.com/drive/folders/183FC5UEqnRI-mpCzQP5ynhmMx2mjTqzv"><span class="link-type folder">FOLDER</span> Leadership Discovery Workshop Resources</a></p>
 </section>
 
+<!-- Calendar -->
 <section id="calendar">
-  <h2>2026 Calendar</h2>
+  <h2>📅 2026 Calendar</h2>
   <div class="grid-2">
     <div>
       <h3>First Term (Jan-Jun)</h3>
-      <p>Rotating streams A-D each month covering all 4 module groups.</p>
+      <p>Rotating streams A-D covering all 4 module groups monthly.</p>
       <p><strong>Quiz:</strong> Sundays 8pm-9:30pm</p>
-      <p><a href="https://docs.google.com/spreadsheets/d/1Y8wQNtwVbXR1ix8idcc8LfEEoDJaFJ1FfoMJ5G49tD4/edit">Full calendar &rarr;</a></p>
+      <p><a href="https://docs.google.com/spreadsheets/d/1Y8wQNtwVbXR1ix8idcc8LfEEoDJaFJ1FfoMJ5G49tD4/edit"><span class="link-type sheet">SHEET</span> Full calendar &rarr;</a></p>
     </div>
     <div>
       <h3>Second Term (Jul-Nov)</h3>
@@ -385,11 +588,10 @@
         <li><strong>Sep 8-13:</strong> Collaborating for Mission</li>
         <li><strong>Sep 15-20:</strong> Leading &amp; Building Teams</li>
         <li><strong>Oct 6-Nov 28:</strong> Strengths &amp; Gifts (8 weeks)</li>
-        <li><strong>Nov 29:</strong> Commissioning Ceremony</li>
+        <li><strong>Nov 29:</strong> 🎉 Commissioning Ceremony</li>
       </ul>
     </div>
   </div>
-
   <h3 style="margin-top:12px;">Clergy Track</h3>
   <div class="grid-2">
     <div><strong>Jan 28-29:</strong> Leading Effective Organizations</div>
@@ -399,35 +601,43 @@
   </div>
 </section>
 
+<!-- Tracking -->
 <section id="tracking">
-  <h2>Track Your Progress</h2>
+  <h2>📈 Track Your Progress</h2>
   <div class="grid-2">
     <div>
-      <h3>Completion Status Records (CSR)</h3>
+      <h3>Completion Status Records</h3>
       <p>Check your scores by region:</p>
-      <a href="https://drive.google.com/drive/folders/1jS1E2FTt14efPUHRe2k4zuhZfGEPSOgp">Open CSR folder &rarr;</a>
-      <p style="font-size:0.85em;margin-top:4px;">Regions: Badagry, Ikeja, Lagos, Lekki + Unknown</p>
+      <div style="display:flex;flex-direction:column;gap:4px;">
+        <a href="https://docs.google.com/spreadsheets/d/15mIlQScUfq_8mt1nKJ41csxw3K9jNa_F_hw4VIyuHa4/edit"><span class="link-type sheet">SHEET</span> Badagry Region</a>
+        <a href="https://docs.google.com/spreadsheets/d/1cXoWKE6tayBheYbZwMIMGQxmCL1kUcz3rO5RuTx0Bvs/edit"><span class="link-type sheet">SHEET</span> Ikeja Region</a>
+        <a href="https://docs.google.com/spreadsheets/d/1yoh_mH6Nki0H5i1K21hT9sL9Fysm5sBur7z9pmuUOlQ/edit"><span class="link-type sheet">SHEET</span> Lagos Region</a>
+        <a href="https://docs.google.com/spreadsheets/d/1dKadD4nGh3mrB2PtXusjKjmIzApmRqlXu6LN0tMURO4/edit"><span class="link-type sheet">SHEET</span> Lekki Region</a>
+        <a href="https://docs.google.com/spreadsheets/d/1-mCc-eS2UQl255IU9egKhL7t0ceSuqB3wRPEbzcROhk/edit"><span class="link-type sheet">SHEET</span> Unknown Region</a>
+      </div>
+      <a href="https://drive.google.com/drive/folders/1jS1E2FTt14efPUHRe2k4zuhZfGEPSOgp" style="font-size:0.82em;display:inline-block;margin-top:4px;"><span class="link-type folder">FOLDER</span> Open full folder &rarr;</a>
     </div>
     <div>
       <h3>Personal Progress Tracker</h3>
-      <p>Download this sheet to track your own progress:</p>
-      <a href="https://docs.google.com/spreadsheets/d/1NYo_a39BZRB6MyemC1fkj5KLk45At5s72rlbnv72LtM/edit">Open tracker &rarr;</a>
+      <p>Download to track your own progress:</p>
+      <a href="https://docs.google.com/spreadsheets/d/1NYo_a39BZRB6MyemC1fkj5KLk45At5s72rlbnv72LtM/edit"><span class="link-type sheet">SHEET</span> Open tracker &rarr;</a>
     </div>
     <div>
       <h3>Zoom Attendance Records</h3>
-      <p>Session-by-session records by month &amp; module:</p>
-      <a href="https://drive.google.com/drive/folders/1AI85JSLk63V57xLtoZb0lwykP_KxIHgv">Open attendance &rarr;</a>
+      <p>Session-by-session by month &amp; module:</p>
+      <a href="https://drive.google.com/drive/folders/1AI85JSLk63V57xLtoZb0lwykP_KxIHgv"><span class="link-type folder">FOLDER</span> Open attendance &rarr;</a>
     </div>
     <div>
-      <h3>Data Entry Tracking (Complaints)</h3>
-      <p>Check your deanery's status before lodging complaints:</p>
-      <a href="https://docs.google.com/spreadsheets/d/1235Dcc7w0KJVtNQoJcVlEaKYeuii76B5wlskUArXGrw/edit">Open tracking sheet &rarr;</a>
+      <h3>Data Entry Tracking</h3>
+      <p>Check deanery status before lodging complaints:</p>
+      <a href="https://docs.google.com/spreadsheets/d/1235Dcc7w0KJVtNQoJcVlEaKYeuii76B5wlskUArXGrw/edit"><span class="link-type sheet">SHEET</span> Open tracking sheet &rarr;</a>
     </div>
   </div>
 </section>
 
+<!-- Elections -->
 <section id="elections">
-  <h2>2026 Laity Elections</h2>
+  <h2>🗳️ 2026 Laity Elections</h2>
   <p><strong>Phased approach:</strong></p>
   <div class="grid-2" style="margin-bottom:8px;">
     <div><strong>Feb:</strong> Groups with 25+ members, 3+ eligible with 4+ AEMP scores</div>
@@ -438,181 +648,153 @@
     <div><strong>Sep:</strong> By-elections</div>
     <div><strong>Nov 29:</strong> Commissioning Ceremony</div>
   </div>
-  <p><strong>Key documents:</strong></p>
+  <p><strong>Key docs:</strong></p>
   <div class="grid-2">
-    <a href="https://docs.google.com/document/d/1a-L9aGFNjo80CnDgvZrkE7rVwUJ_wf3KTWmMkvBf3N0/edit">Elections Resources &rarr;</a>
-    <a href="https://drive.google.com/drive/folders/1zGCNaXJbBBNhlupDWRHoiYNIVpt-oqEE">Approved Guidelines (9 PDFs) &rarr;</a>
-    <a href="https://docs.google.com/document/d/1ITSIyVNx788WNivtdziKfChOgmtAa14a5bIRrqCXjMY/edit">Steps to Managing Elections &rarr;</a>
-    <a href="https://forms.gle/iTcjoWWehKoNi5rc7">Report Violations &rarr;</a>
+    <a href="https://docs.google.com/document/d/1a-L9aGFNjo80CnDgvZrkE7rVwUJ_wf3KTWmMkvBf3N0/edit"><span class="link-type doc">DOC</span> Elections Resources &rarr;</a>
+    <a href="https://drive.google.com/drive/folders/1zGCNaXJbBBNhlupDWRHoiYNIVpt-oqEE"><span class="link-type folder">FOLDER</span> Approved Guidelines (9 PDFs) &rarr;</a>
+    <a href="https://docs.google.com/document/d/1ITSIyVNx788WNivtdziKfChOgmtAa14a5bIRrqCXjMY/edit"><span class="link-type doc">DOC</span> Steps to Managing Elections &rarr;</a>
+    <a href="https://forms.gle/iTcjoWWehKoNi5rc7"><span class="link-type form">FORM</span> Report Violations &rarr;</a>
   </div>
 </section>
 
+<!-- Forms -->
 <section id="forms">
-  <h2>All Forms at a Glance</h2>
+  <h2>📋 All Forms at a Glance</h2>
   <div class="grid-2">
-    <a href="https://forms.gle/32zLgwt97KBewj879"><strong>Registration</strong></a>
-    <a href="https://forms.gle/ksudnw4zoStTJhsRA"><strong>Complaints</strong></a>
-    <a href="https://forms.gle/yp3rQCLHctXs8Bbm6"><strong>WhatsApp Re-Add</strong></a>
-    <a href="https://forms.gle/iTcjoWWehKoNi5rc7"><strong>Elections Violations</strong></a>
-    <a href="https://forms.gle/CSEVPncSBbXLpJ1Z6"><strong>End of Programme Feedback</strong></a>
+    <a href="https://forms.gle/32zLgwt97KBewj879"><span class="link-type form">FORM</span> <strong>Registration</strong></a>
+    <a href="https://forms.gle/ksudnw4zoStTJhsRA"><span class="link-type form">FORM</span> <strong>Complaints</strong></a>
+    <a href="https://forms.gle/yp3rQCLHctXs8Bbm6"><span class="link-type form">FORM</span> <strong>WhatsApp Re-Add</strong></a>
+    <a href="https://forms.gle/iTcjoWWehKoNi5rc7"><span class="link-type form">FORM</span> <strong>Elections Violations</strong></a>
+    <a href="https://forms.gle/CSEVPncSBbXLpJ1Z6"><span class="link-type form">FORM</span> <strong>End of Programme Feedback</strong></a>
   </div>
   <h3>Assignment Submission Forms</h3>
   <div class="grid-2">
-    <a href="https://forms.gle/KNC8Asdh548xmXiL8">Leadership - Managing Self</a>
-    <a href="https://forms.gle/YZBd6mEPwtkwgsdYA">Leadership - Relating</a>
-    <a href="https://forms.gle/RkYv3pxLHFnvyiYn8">Leadership - Collaborating</a>
-    <a href="https://forms.gle/FHjjbAe5qosCCwjY7">Leadership - Leading Teams</a>
-    <a href="https://forms.gle/dcUGhCbFfHJCgZKq5">Strengths Discernment</a>
-    <a href="https://forms.gle/ZZWwkfUVgwKK5u6i9">Gifts Discernment</a>
-    <a href="https://forms.gle/CR44J5iQ61ULRCFr8">Guidelines - Parish (PPC/PLC/PFC/HRM)</a>
-    <a href="https://forms.gle/R3UiVmMDHUGw9KMMA">Guidelines - Deanery/Archdiocesan</a>
+    <a href="https://forms.gle/KNC8Asdh548xmXiL8"><span class="link-type form">FORM</span> Leadership - Managing Self</a>
+    <a href="https://forms.gle/YZBd6mEPwtkwgsdYA"><span class="link-type form">FORM</span> Leadership - Relating</a>
+    <a href="https://forms.gle/RkYv3pxLHFnvyiYn8"><span class="link-type form">FORM</span> Leadership - Collaborating</a>
+    <a href="https://forms.gle/FHjjbAe5qosCCwjY7"><span class="link-type form">FORM</span> Leadership - Leading Teams</a>
+    <a href="https://forms.gle/dcUGhCbFfHJCgZKq5"><span class="link-type form">FORM</span> Strengths Discernment</a>
+    <a href="https://forms.gle/ZZWwkfUVgwKK5u6i9"><span class="link-type form">FORM</span> Gifts Discernment</a>
+    <a href="https://forms.gle/CR44J5iQ61ULRCFr8"><span class="link-type form">FORM</span> Guidelines - Parish</a>
+    <a href="https://forms.gle/R3UiVmMDHUGw9KMMA"><span class="link-type form">FORM</span> Guidelines - Deanery/Archdiocesan</a>
   </div>
 </section>
 
+<!-- Videos -->
 <section id="videos">
-  <h2>Videos</h2>
+  <h2>🎬 Videos</h2>
   <div class="grid-2">
     <div>
       <h3>Orientation</h3>
-      <a href="https://youtu.be/uuJX1zLOmXQ">AEMP Onboarding Video &rarr;</a>
-      <a href="https://youtube.com/live/lQOmb4aWGvQM">Leadership Discovery Workshop &rarr;</a>
+      <a href="https://youtu.be/uuJX1zLOmXQ"><span class="link-type video">VIDEO</span> AEMP Onboarding &rarr;</a>
+      <a href="https://youtube.com/live/lQOmb4aWGvQM"><span class="link-type video">VIDEO</span> Leadership Discovery Workshop &rarr;</a>
     </div>
     <div>
       <h3>Tutorials</h3>
-      <a href="https://youtu.be/2N5H55LDg-o">Name Device on Zoom &rarr;</a>
-      <a href="https://youtu.be/oNJi8XCQZvQ">Join WhatsApp Group &rarr;</a>
-      <a href="https://youtu.be/WcgfBpQcXow">Leave WhatsApp Group &rarr;</a>
+      <a href="https://youtu.be/2N5H55LDg-o"><span class="link-type video">VIDEO</span> Name Device on Zoom &rarr;</a>
+      <a href="https://youtu.be/oNJi8XCQZvQ"><span class="link-type video">VIDEO</span> Join WhatsApp Group &rarr;</a>
+      <a href="https://youtu.be/WcgfBpQcXow"><span class="link-type video">VIDEO</span> Leave WhatsApp Group &rarr;</a>
     </div>
     <div>
       <h3>Elections</h3>
-      <a href="https://youtu.be/Dnbf5peToJI">Guidelines Q&amp;A (Short) &rarr;</a>
-      <a href="https://youtu.be/yacpeVNsG30">Guidelines Q&amp;A (Full) &rarr;</a>
+      <a href="https://youtu.be/Dnbf5peToJI"><span class="link-type video">VIDEO</span> Q&amp;A (Short) &rarr;</a>
+      <a href="https://youtu.be/yacpeVNsG30"><span class="link-type video">VIDEO</span> Q&amp;A (Full) &rarr;</a>
     </div>
     <div>
       <h3>Guidelines Seminar</h3>
-      <a href="https://drive.google.com/file/d/1DCRpedc0dGBBGOdu0CW9teX8dM9s1uaW/view">Introduction &rarr;</a>
-      <a href="https://drive.google.com/file/d/1iyyFGXZhxwxU_8A2NymxWS6_JzCPKhu5/view">PLC Q&amp;A &rarr;</a>
-      <a href="https://drive.google.com/file/d/18p-NzwETWv9m7_d7qZ2NyC6TDATtf3fA/view">PPC Q&amp;A &rarr;</a>
+      <a href="https://drive.google.com/file/d/1DCRpedc0dGBBGOdu0CW9teX8dM9s1uaW/view"><span class="link-type video">VIDEO</span> Introduction &rarr;</a>
+      <a href="https://drive.google.com/file/d/1iyyFGXZhxwxU_8A2NymxWS6_JzCPKhu5/view"><span class="link-type video">VIDEO</span> PLC Q&amp;A &rarr;</a>
+      <a href="https://drive.google.com/file/d/18p-NzwETWv9m7_d7qZ2NyC6TDATtf3fA/view"><span class="link-type video">VIDEO</span> PPC Q&amp;A &rarr;</a>
     </div>
   </div>
 </section>
 
-<section id="rules">
-  <h2>Key Rules</h2>
-  <div class="grid-2">
-    <div>
-      <h3>Study</h3>
-      <ul class="resource-list">
-        <li>Begin with ANY module (Leadership, Strengths, Gifts, or Guidelines)</li>
-        <li>Submit exercises BEFORE sessions for attendance credit</li>
-        <li>Pass mark: 75% (concessionary 60% ended June 2026)</li>
-        <li>Minimum 120 min attendance per session</li>
-        <li>Plagiarism = zero scores for both parties</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Platform Conduct</h3>
-      <ul class="resource-list">
-        <li>No private messages/calls to admins</li>
-        <li>Platforms open 6pm-10am daily</li>
-        <li>Course-related questions only</li>
-        <li>One M&A platform at a time</li>
-        <li>Use Complaints Form for scores/issues</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="communication">
-  <h2>Stay Connected</h2>
-  <p><a href="https://t.me/+iMXI3ZGkFUJiN2Vk"><strong>Telegram:</strong> Join for current &amp; future AEMP info &rarr;</a></p>
-  <p style="font-size:0.85em;">WhatsApp: Invites emailed first week June 2026 (Zoom/Physical only). Self-study participants organize parish groups.</p>
-</section>
-
+<!-- Extracted PDFs -->
 <section id="extracted">
-  <h2>PDF Contents Extracted &mdash; Now Searchable</h2>
-  <p>All PDFs extracted to <code>aemp/extracted/</code>. Full text available in JSON files.</p>
+  <h2>📄 PDF Contents Extracted</h2>
+  <p>Full text available in <code>aemp/extracted/</code> JSON files.</p>
   <div class="grid-2">
     <div>
       <h3>Governance Guidelines</h3>
       <ul class="resource-list" style="font-size:0.85em;">
-        <li><strong>Parish Pastoral &amp; Laity Councils</strong> (21p) &mdash; PPC functions, membership, selection, tenure, meeting protocols</li>
-        <li><strong>Parish Finance &amp; Admin</strong> (25p) &mdash; Finance Council, consultation areas, conflicts of interest</li>
-        <li><strong>HR Management</strong> (24p) &mdash; Policies for clergy, lay employees, volunteers</li>
-        <li><strong>Deanery Pastoral Council</strong> (7p) &mdash; Coordinating pastoral activities across parishes</li>
-        <li><strong>Deanery Laity Council</strong> (10p) &mdash; Apostolicam Actuositatem mandate</li>
-        <li><strong>LALC Guidelines</strong> (9p) &mdash; Archdiocesan Laity Council operations</li>
+        <li><strong>Parish Pastoral &amp; Laity Councils</strong> (21p)</li>
+        <li><strong>Parish Finance &amp; Admin</strong> (25p)</li>
+        <li><strong>HR Management</strong> (24p)</li>
+        <li><strong>Deanery Pastoral Council</strong> (7p)</li>
+        <li><strong>Deanery Laity Council</strong> (10p)</li>
+        <li><strong>LALC Guidelines</strong> (9p)</li>
       </ul>
     </div>
     <div>
       <h3>Case Studies</h3>
       <ul class="resource-list" style="font-size:0.85em;">
-        <li><strong>St. Thomas Winneba</strong> &mdash; Father Kofi's leadership breakdown, harvest decline</li>
-        <li><strong>Eka Deanery</strong> &mdash; DLC overreach with mandatory levies &amp; prayer directives</li>
-        <li><strong>Mabel</strong> &mdash; 22-yr-old graduate, stress from work+parish+study overload</li>
-        <li><strong>St. Peter's Church</strong> &mdash; 1/3 parishioners left due to heat/PA system; renovation reversed exodus</li>
-        <li><strong>New PLC Chairman</strong> &mdash; Austin Ajao, elected by 15 voters, ineffective leadership</li>
-        <li><strong>St. Albert</strong> &mdash; VP Chairman signed contracts while PP was on vacation</li>
+        <li><strong>St. Thomas Winneba</strong> &mdash; leadership breakdown</li>
+        <li><strong>Eka Deanery</strong> &mdash; DLC overreach</li>
+        <li><strong>Mabel</strong> &mdash; stress overload</li>
+        <li><strong>St. Peter's</strong> &mdash; exodus reversed by renovation</li>
+        <li><strong>New PLC Chairman</strong> &mdash; ineffective leader</li>
+        <li><strong>St. Albert</strong> &mdash; unauthorized contracts</li>
       </ul>
     </div>
     <div>
-      <h3>Handouts &amp; Exercises</h3>
+      <h3>Handouts</h3>
       <ul class="resource-list" style="font-size:0.85em;">
-        <li><strong>Spiritual Gifts</strong> (14p) &mdash; 20 gift descriptions with Scripture, CCC, patron saints</li>
-        <li><strong>Collaborative Problem Solving</strong> (10p) &mdash; 4 phases: ID, solutions, action plan, follow-up</li>
-        <li><strong>8 Principles of Supportive Communication</strong> (2p, OCR'd) &mdash; Congruent, Descriptive, Problem-oriented, Validating, Specific, Conjunctive, Owned, Supportive listening</li>
-        <li><strong>How to Run a Meeting</strong> (9p) &mdash; James Ware classic on meeting effectiveness</li>
-        <li><strong>Team Building Notes</strong> (5p) &mdash; Tuckman's stages: Forming, Storming, Norming, Performing</li>
-        <li><strong>Group Roles</strong> (8p) &mdash; Benne &amp; Sheats' 26 group roles (task, social, dysfunctional)</li>
-        <li><strong>Pastoral Competences</strong> (3p) &mdash; Catholic Leadership 360 mapping</li>
+        <li><strong>Spiritual Gifts</strong> (14p, 20 gifts)</li>
+        <li><strong>Collaborative Problem Solving</strong> (10p)</li>
+        <li><strong>Supportive Communication</strong> (2p, OCR'd)</li>
+        <li><strong>How to Run a Meeting</strong> (9p)</li>
+        <li><strong>Team Building</strong> (5p, Tuckman's stages)</li>
+        <li><strong>Group Roles</strong> (8p, 26 roles)</li>
       </ul>
     </div>
     <div>
       <h3>Strengths Curriculum</h3>
       <ul class="resource-list" style="font-size:0.85em;">
-        <li><strong>Week 1:</strong> Identify Top 5 talent themes + signature collage</li>
-        <li><strong>Week 2:</strong> Living your strengths daily (3+ examples per theme)</li>
-        <li><strong>Week 3:</strong> Developing - what if I used more/less? + journaling</li>
-        <li><strong>Week 4:</strong> Sustaining - blind spots, partnership plan, mission statement</li>
+        <li><strong>Week 1:</strong> Top 5 talent themes + collage</li>
+        <li><strong>Week 2:</strong> Living strengths daily</li>
+        <li><strong>Week 3:</strong> Developing + journaling</li>
+        <li><strong>Week 4:</strong> Blind spots, partnership plan, mission statement</li>
       </ul>
     </div>
   </div>
 </section>
 
+<!-- Strengths Themes -->
 <section id="strengths-ref">
-  <h2>CliftonStrengths &mdash; 34 Themes Reference</h2>
-  <p>Talent themes organized into 4 domains. Find yours at <a href="https://www.gallup.com/cliftonstrengths/en/253715/34-cliftonstrengths-themes.aspx">Gallup</a> &bull; <a href="https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit">Self-assessment sheet</a></p>
+  <h2>⭐ CliftonStrengths &mdash; 34 Themes</h2>
+  <p>Find yours at <a href="https://www.gallup.com/cliftonstrengths/en/253715/34-cliftonstrengths-themes.aspx">Gallup</a> &bull; <a href="https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit">Self-assessment sheet</a></p>
   <div class="grid-2">
     <div>
       <h3>Executing</h3>
-      <p style="font-size:0.8em;color:#555;">Make things happen</p>
+      <p style="font-size:0.8em;color:var(--text2);">Make things happen</p>
       <p><span class="tag">Achiever</span><span class="tag">Arranger</span><span class="tag">Belief</span><span class="tag">Consistency</span><span class="tag">Deliberative</span><span class="tag">Discipline</span><span class="tag">Focus</span><span class="tag">Responsibility</span><span class="tag">Restorative</span></p>
     </div>
     <div>
       <h3>Influencing</h3>
-      <p style="font-size:0.8em;color:#555;">Take charge, speak up</p>
+      <p style="font-size:0.8em;color:var(--text2);">Take charge, speak up</p>
       <p><span class="tag">Activator</span><span class="tag">Command</span><span class="tag">Communication</span><span class="tag">Competition</span><span class="tag">Maximizer</span><span class="tag">Self-Assurance</span><span class="tag">Significance</span><span class="tag">Woo</span></p>
     </div>
     <div>
       <h3>Relationship Building</h3>
-      <p style="font-size:0.8em;color:#555;">Build strong relationships</p>
+      <p style="font-size:0.8em;color:var(--text2);">Build strong relationships</p>
       <p><span class="tag">Adaptability</span><span class="tag">Connectedness</span><span class="tag">Developer</span><span class="tag">Empathy</span><span class="tag">Harmony</span><span class="tag">Includer</span><span class="tag">Individualization</span><span class="tag">Positivity</span><span class="tag">Relator</span></p>
     </div>
     <div>
       <h3>Strategic Thinking</h3>
-      <p style="font-size:0.8em;color:#555;">Absorb &amp; analyze information</p>
+      <p style="font-size:0.8em;color:var(--text2);">Absorb &amp; analyze</p>
       <p><span class="tag">Analytical</span><span class="tag">Context</span><span class="tag">Futuristic</span><span class="tag">Ideation</span><span class="tag">Input</span><span class="tag">Intellection</span><span class="tag">Learner</span><span class="tag">Strategic</span></p>
     </div>
   </div>
 </section>
 
+<!-- Discernment -->
 <section id="discernment-journeys">
-  <h2>Spiritual Discernment Journeys</h2>
-  <p>Prayer/healing journey referenced in Strengths materials (separate from AEMP).</p>
-  <p><a href="https://docs.google.com/document/d/18hjxbg-dh6u6zUA-AUxQErcpCZvFCu0w/edit">Guidelines Document &rarr;</a></p>
+  <h2>🕯️ Spiritual Discernment Journeys</h2>
+  <p>Prayer/healing journey (separate from AEMP).</p>
+  <p><a href="https://docs.google.com/document/d/18hjxbg-dh6u6zUA-AUxQErcpCZvFCu0w/edit"><span class="link-type doc">DOC</span> Guidelines &rarr;</a></p>
   <div class="grid-2" style="font-size:0.85em;">
     <div>
-      <h3>Participation Rules</h3>
+      <h3>Rules</h3>
       <ul class="resource-list">
         <li>Must attend first session or removed</li>
         <li>Timely submissions required</li>
@@ -622,11 +804,11 @@
       </ul>
     </div>
     <div>
-      <h3>Process Notes</h3>
+      <h3>Process</h3>
       <ul class="resource-list">
         <li>Confession &amp; counselling recommended</li>
         <li>Body-mind-spirit connection</li>
-        <li>Psychotherapy referral if needed (Chichi)</li>
+        <li>Psychotherapy referral (Chichi)</li>
         <li>Subsidiarity: peers before mentors</li>
         <li>Disruptive behaviour = removal</li>
       </ul>
@@ -634,15 +816,198 @@
   </div>
 </section>
 
+<!-- Rules -->
+<section id="rules">
+  <h2>📏 Key Rules</h2>
+  <div class="grid-2">
+    <div>
+      <h3>Study</h3>
+      <ul class="resource-list">
+        <li><input type="checkbox" class="progress-check" data-task="r1" onchange="updateProgress()"> Begin with ANY module</li>
+        <li><input type="checkbox" class="progress-check" data-task="r2" onchange="updateProgress()"> Submit exercises BEFORE sessions</li>
+        <li><input type="checkbox" class="progress-check" data-task="r3" onchange="updateProgress()"> Pass mark: 75% (60% ended June 2026)</li>
+        <li><input type="checkbox" class="progress-check" data-task="r4" onchange="updateProgress()"> Min 120 min attendance per session</li>
+        <li><input type="checkbox" class="progress-check" data-task="r5" onchange="updateProgress()"> Plagiarism = zero for both parties</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Conduct</h3>
+      <ul class="resource-list">
+        <li><input type="checkbox" class="progress-check" data-task="r6" onchange="updateProgress()"> No private messages to admins</li>
+        <li><input type="checkbox" class="progress-check" data-task="r7" onchange="updateProgress()"> Platforms open 6pm-10am</li>
+        <li><input type="checkbox" class="progress-check" data-task="r8" onchange="updateProgress()"> Course questions only</li>
+        <li><input type="checkbox" class="progress-check" data-task="r9" onchange="updateProgress()"> One M&amp;A platform at a time</li>
+        <li><input type="checkbox" class="progress-check" data-task="r10" onchange="updateProgress()"> Use Complaints Form for scores</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Communication -->
+<section id="communication">
+  <h2>💬 Stay Connected</h2>
+  <p><a href="https://t.me/+iMXI3ZGkFUJiN2Vk"><strong>Telegram:</strong> Join for AEMP info &rarr;</a></p>
+  <p style="font-size:0.85em;">WhatsApp invites emailed first week June 2026 (Zoom/Physical only). Self-study participants organize parish groups.</p>
+</section>
+
 <div class="footer">
   Archdiocesan Engagement for Mission Programme &bull; Catholic Archdiocese of Lagos &bull; 2026<br>
   <em>Our Lady, Seat of Wisdom, Pray for Us</em>
 </div>
 
-</div>
+</div><!-- /container -->
+</div><!-- /main -->
+</div><!-- /layout -->
+
 <script>
-  // Open first module by default
-  document.querySelector('.module-body')?.classList.add('open');
+// Theme toggle
+(function initTheme() {
+  const dark = localStorage.getItem('aemp-theme') === 'dark';
+  if (dark) document.body.classList.add('dark');
+})();
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('aemp-theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
+
+// Sidebar
+function closeSidebar() {
+  document.querySelector('.sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+function openSidebar() {
+  document.querySelector('.sidebar').classList.add('open');
+  document.getElementById('sidebarOverlay').classList.add('open');
+}
+document.querySelector('.hamburger').addEventListener('click', function(e) {
+  e.stopPropagation();
+  const s = document.querySelector('.sidebar');
+  s.classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+});
+document.querySelectorAll('.sidebar a').forEach(a => a.addEventListener('click', closeSidebar));
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeSidebar();
+});
+
+// Back to top
+(function() {
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+})();
+
+// Section toggle (overview, prayer, registration)
+function toggleSection(bodyId, arrowId) {
+  document.getElementById(bodyId).classList.toggle('open');
+  document.getElementById(arrowId).classList.toggle('open');
+}
+
+// Module accordion
+function toggleModule(header) {
+  const body = header.nextElementSibling;
+  body.classList.toggle('open');
+}
+
+// Search with highlighting
+function doSearch(query) {
+  const q = query.toLowerCase().trim();
+  const modules = document.querySelectorAll('.module');
+  const sections = document.querySelectorAll('section:not(#modules):not(#overview)');
+  const all = [...modules, ...sections, ...document.querySelectorAll('.topic')];
+  all.forEach(el => {
+    if (!q) { el.classList.remove('search-hidden'); return; }
+    el.classList.toggle('search-hidden', !el.textContent.toLowerCase().includes(q));
+  });
+  // Auto-open modules that match
+  if (q) {
+    document.querySelectorAll('.module:not(.search-hidden) .module-body').forEach(b => b.classList.add('open'));
+  } else {
+    document.querySelectorAll('.module-body').forEach(b => b.classList.remove('open'));
+  }
+  // Highlight matching text
+  document.querySelectorAll('.search-highlight').forEach(el => {
+    const p = el.parentNode;
+    p.replaceChild(document.createTextNode(el.textContent), el);
+    p.normalize();
+  });
+  if (q.length >= 2) {
+    document.querySelectorAll('.module:not(.search-hidden) .topic-name, .module:not(.search-hidden) .resource-list, section:not(.search-hidden) p, section:not(.search-hidden) li').forEach(el => {
+      const regex = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+      if (el.children.length === 0 || el.querySelector('a, strong, em, span') === null) {
+        el.innerHTML = el.innerHTML.replace(regex, '<span class="search-highlight">$1</span>');
+      }
+    });
+  }
+}
+
+// Progress checkboxes
+function updateProgress() {
+  const checks = document.querySelectorAll('.progress-check');
+  const done = Array.from(checks).filter(c => c.checked).length;
+  const total = checks.length;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  const bar = document.getElementById('overall-progress');
+  const txt = document.getElementById('progress-txt');
+  if (bar) bar.style.width = pct + '%';
+  if (txt) txt.textContent = `${done}/${total} items (${pct}%)`;
+  const state = {};
+  checks.forEach(c => state[c.dataset.task || c.dataset.module] = c.checked);
+  localStorage.setItem('aemp-progress', JSON.stringify(state));
+}
+
+// Load saved progress
+(function loadProgress() {
+  const saved = localStorage.getItem('aemp-progress');
+  if (!saved) return;
+  try {
+    const state = JSON.parse(saved);
+    document.querySelectorAll('.progress-check').forEach(c => {
+      const key = c.dataset.task || c.dataset.module;
+      if (state[key]) c.checked = true;
+    });
+    updateProgress();
+  } catch(e) {}
+})();
+
+// Stats counter
+(function countStats() {
+  const el = document.getElementById('stats');
+  if (!el) return;
+  const modules = document.querySelectorAll('.module').length;
+  const docLinks = document.querySelectorAll('a[href*="docs.google.com/document"]').length;
+  const sheetLinks = document.querySelectorAll('a[href*="docs.google.com/spreadsheets"]').length;
+  const folderLinks = document.querySelectorAll('a[href*="drive.google.com/drive/folders"]').length;
+  const formLinks = document.querySelectorAll('a[href*="forms.gle"]').length;
+  const videoLinks = document.querySelectorAll('a[href*="youtu"], a[href*="youtube"]').length;
+  const totalLinks = docLinks + sheetLinks + folderLinks + formLinks + videoLinks + document.querySelectorAll('a[href*="drive.google.com/file"]').length + document.querySelectorAll('a[href*="drive.google.com/uc"]').length;
+  el.innerHTML = `
+    <div class="stat-card"><div class="num">${modules}</div><div class="label">Modules</div></div>
+    <div class="stat-card"><div class="num">${totalLinks}</div><div class="label">Resources</div></div>
+    <div class="stat-card"><div class="num">${docLinks}</div><div class="label">Documents</div></div>
+    <div class="stat-card"><div class="num">${sheetLinks}</div><div class="label">Sheets</div></div>
+    <div class="stat-card"><div class="num">${formLinks}</div><div class="label">Forms</div></div>
+    <div class="stat-card"><div class="num">${videoLinks}</div><div class="label">Videos</div></div>
+  `;
+})();
+
+// Active sidebar link on scroll
+(function() {
+  const links = document.querySelectorAll('.sidebar a');
+  const sections = [];
+  links.forEach(a => {
+    const id = a.getAttribute('href');
+    if (id && id.startsWith('#')) sections.push({id: id.slice(1), el: document.getElementById(id.slice(1))});
+  });
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (s.el && window.scrollY >= s.el.offsetTop - 100) current = s.id; });
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+})();
 </script>
 </body>
 </html>

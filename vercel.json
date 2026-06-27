@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cp aemp-index.html index.html",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false
+}
