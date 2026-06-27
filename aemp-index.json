@@ -1,0 +1,944 @@
+{
+  "programme": {
+    "title": "Archdiocesan Engagement for Mission Programme (AEMP)",
+    "archdiocese": "Catholic Archdiocese of Lagos",
+    "archbishop": "Alfred Adewale Martins",
+    "director": "Chichi Amangbo",
+    "team": "Leading for Mission (LFM) Directorate",
+    "year": 2026,
+    "description": "Leadership and spiritual formation initiative to deepen spiritual commitment, evangelization capacity, and leadership effectiveness of lay faithful and clergy.",
+    "purpose": [
+      "Enhance parish and lay group participation in the Church's mission",
+      "Deepen spirituality and discernment of God-given talents",
+      "Prepare lay Catholics for formal leadership roles (pipeline of successors by 2030)",
+      "Promote personal growth applicable to all areas of life"
+    ],
+    "mandatory": "Required for anyone seeking formal leadership positions in the Archdiocese",
+    "openTo": "All parishioners (encouraged, not just mandatory)",
+    "deliveryModes": [
+      "Facilitated Sessions (Zoom + Physical)",
+      "Peer Study Groups (Parish-organized, 6-16 per group)",
+      "Self-Study/Private Study"
+    ],
+    "assessmentCriteria": {
+      "passQuiz": true,
+      "submitExercises": "Complete, accurate, and original work",
+      "attendSessions": true,
+      "passMark": "75% (concessionary 60% ended June 2026)",
+      "minimumAttendanceMinutes": 120,
+      "plagiarismPolicy": "Strictly penalized (zero scores for both copier and source); may be reported to parish priests",
+      "scoresRequired": "18/18 for leadership eligibility"
+    }
+  },
+
+  "prayer": {
+    "title": "AEMP Prayer",
+    "link": "https://docs.google.com/document/d/1Uo4a63cU9iqMTZBNA48JugsqKRmYMcrwfsY7PCwUvpc/edit",
+    "fullText": "Heavenly Father, we Your children of the Catholic Archdiocese of Lagos entrust ourselves and the Archdiocesan Engagement for Mission Programme into Your Hands. Grant us Your wisdom and discernment, as we navigate the changes and challenges that lie ahead. Bless the work of our hands, that the AEMP may contribute to the well-being, growth and salvation of all. May we, with the help of the Holy Spirit, contribute to this endeavor with integrity, creativity, and perseverance. Grant us your Spirit of Unity. Help us to recognize and put aside our selfish desires and work together in harmony towards our common goals of spiritual-commitment and engagement. May our words be filled with love and respect, and our actions reflect Your grace. Give us courage and strength to overcome any anxieties that keep us from accepting the changes needed in this programme. Help us to move forward with peace in our hearts during and after this transition. When we are daunted by the pressures of the AEMP, help us to depend on your strength and increase our faith. We ask all these through Jesus Christ, our Lord. Amen. Our Lady, Seat of Wisdom, Pray for Us. Our Lady, Queen of Nigeria, Pray for Us. Our Lady, Queen of Peace, Pray for Us."
+  },
+
+  "modules": [
+    {
+      "id": 1,
+      "name": "Parish Guidelines",
+      "code": "GUIDELINES-PARISH",
+      "studyWeeks": "Weeks 1 & 3 (Guidelines schedule)",
+      "covers": [
+        "PPC - Parish Pastoral Council",
+        "PLC - Parish Laity Council",
+        "PFC - Parish Finance Council",
+        "HRM - Human Resources Management"
+      ],
+      "topics": [
+        {
+          "id": "topic-15",
+          "name": "Parish Guidelines (Topic 15)",
+          "preparationQuestions": "https://docs.google.com/document/d/1nERt7HLtWpcTpBY0lTddq2z-9OsH8QhW6w0QEBYzK-s/edit",
+          "assignments": [
+            "Read 'St. Thomas Parish Winneba' case study and respond",
+            "Read Parish Pastoral & Laity Guidelines - compare with your parish operations (4 aligned + 4 non-aligned for each council)",
+            "Read Parish Finance Council & Administration Guidelines - compare with your parish (4 aligned + 4 non-aligned)",
+            "Read Human Resources Management Guidelines - compare for laity and clergy (4 aligned + 4 non-aligned each)",
+            "Reflect on how guidelines help holiness and evangelization (what to do more/less/start/stop)"
+          ],
+          "resources": {
+            "caseStudy_STThomasWinneba": "https://drive.google.com/file/d/1yHnjQbT4jCtqkGxXaG-VlcRPBVsGn_CC/view",
+            "parishPastoralLaityGuidelinesPDF": "https://drive.google.com/file/d/1OKKeZAgfJA2ZJ2xY7uBbPCM8JE42pdGi/view",
+            "parishFinanceAdminGuidelinesPDF": "https://drive.google.com/file/d/1riChGOYVN2hSyEXi6MCOSPupdtUr_Sis/view",
+            "hrmGuidelinesPDF": "https://drive.google.com/file/d/1iCTixwJzcB74xkgDyVJyF-lSrbZr00l8/view",
+            "presentationSlides": "https://drive.google.com/file/d/11uRsZjzgzyRUetUyPkZkAAngA5yPy9iI/view",
+            "topicVideo": "https://drive.google.com/file/d/1DCRpedc0dGBBGOdu0CW9teX8dM9s1uaW/view",
+            "optional_PPC_QA": "https://drive.google.com/file/d/18p-NzwETWv9m7_d7qZ2NyC6TDATtf3fA/view",
+            "optional_PLC_QA": "https://drive.google.com/file/d/1iyyFGXZhxwxU_8A2NymxWS6_JzCPKhu5/view"
+          },
+          "quiz": true
+        }
+      ],
+      "exerciseSubmission": "https://forms.gle/CR44J5iQ61ULRCFr8",
+      "guidelinesMaterialsFolder": {
+        "link": "https://drive.google.com/drive/folders/1pLYO24xhp0Yk29oKzclOyV7SiXvP0YZA",
+        "contents": [
+          "Parish Councils Guidelines - Self Study Instructions.docx",
+          "Parish Guidelines - Self Study Instructions (Google Docs)",
+          "2023 Parish Pastoral & Laity Guidelines.pdf (1.5 MB)",
+          "2023 Parish Finance Council & Administration Guidelines.pdf (848 KB)",
+          "2023 Human Resources Management Guidelines.pdf (1 MB)",
+          "ST THOMAS PARISH WINNEBA CASE STUDY.pdf (74 KB)",
+          "Archdiocesan Parish Guidelines Seminar - Participants Copy.pdf (1.9 MB)",
+          "2024 Archdiocesan Parish Guidelines Seminar - Introduction.mp4 (441.7 MB)",
+          "Archdiocesan Parish Guidelines - PLC Q&A.mp4 (416.9 MB)",
+          "Archdiocesan Parish Guidelines - PPC Q&A.mp4 (114 MB)"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Deanery & Archdiocesan Guidelines",
+      "code": "GUIDELINES-DEANERY",
+      "studyWeeks": "Weeks 2 & 4 (Guidelines schedule)",
+      "topics": [
+        {
+          "id": "topic-19",
+          "name": "Deanery Guidelines (Topic 19)",
+          "covers": ["DPC - Deanery Pastoral Council", "DLC - Deanery Laity Council"],
+          "preparationQuestions": "https://docs.google.com/document/d/1G0qlkdMvJAeIEjOnoEUpN3AsYLN6JwBZ/edit",
+          "assignments": [
+            "Study Deanery Pastoral Council Guidelines - compare with your deanery (4 aligned + 4 non-aligned)",
+            "Study Deanery Laity Council Guidelines - compare with your deanery (4 aligned + 4 non-aligned)",
+            "Read and analyze 'Eka Deanery' case study",
+            "Complete 'Best Fit' exercise",
+            "Study Constitution of Laity Committees folder - compare with your deanery"
+          ],
+          "resources": {
+            "deaneryPastoralCouncilPDF": "https://drive.google.com/file/d/1aLNRWS8VCMl72fz3ym41i4UqyzXqJajc/view",
+            "deaneryLaityCouncilPDF": "https://drive.google.com/file/d/11vRl5fjqtuGMsIp0_vAjza2OR92uC-V2/view",
+            "ekaDeaneryCaseStudy": "https://drive.google.com/file/d/1Tuduq41qYXxCSc4LIy88f_SRSoNt-84s/view",
+            "bestFitExercise": "https://docs.google.com/document/d/11Gmgk8THVWTueCWk2S6GGclnFXHv7Phs/edit",
+            "constitutionOfLaityCommittees": "https://drive.google.com/drive/folders/1LyLApiZ5JSNpCiKYfxjbwMyQknaU-o-1",
+            "constitutionFolderContents": {
+              "subfolders": [
+                "Archdiocesan Laity Council Guidelines Seminar Materials and Videos",
+                "Deanery Councils Guidelines Seminar Materials and Videos",
+                "Parish Councils Guidelines Seminar Materials and Videos"
+              ],
+              "documents": [
+                { "name": "10. The Purpose of Lay Organisations.pdf", "fileId": "1rCyD3c58fGS_pzchp9yQ2qnodTBYZ1bf" },
+                { "name": "9. Catholic Social Teachings Summary.pdf", "fileId": "1Ez1AuYj_WQJGU4xGaC2cDUYbSsl5brK_" },
+                { "name": "Archdiocesan Guidelines - 2010-2024.mp4", "fileId": "1RZbU39uTkzKIWmB3iyliRetf3pEiE0Qg" },
+                { "name": "Guidelines for the Constitution of Archdiocesan Pastoral Committees.docx", "fileId": "1SZSc6MqattQ9errZ2YB8R6u7DkTjglwn" },
+                { "name": "Guidelines for the Constitution of Laity Committees at Archdiocesan, Deanery, Laity Levels.docx", "fileId": "1vm6hiQSuOBN8l9afNpFylU0FBiWjsZtF" }
+              ]
+            },
+            "presentationSlides": "https://drive.google.com/file/d/1YeQvf8XltWYr1m-t8rw6IQOizyNBUgvu/view",
+            "videos": {
+              "day1": "https://drive.google.com/file/d/1rX5iVXmP65_M2fd7NLTyR_OfRveDBGys/view",
+              "day2": "https://drive.google.com/file/d/10OvnngZKhARC1kyBQbJ3xVsYVLNT73yp/view"
+            }
+          },
+          "optionalReading": {
+            "purposeOfLayOrganizations": "See seminar materials",
+            "summaryOfSocialTeachings": "See seminar materials",
+            "theTwoStandards": "https://www.jesuitscentralsouthern.org/stories/two-standards-stepping-out-in-humility/"
+          },
+          "quiz": true
+        },
+        {
+          "id": "topic-20",
+          "name": "Archdiocesan Guidelines (Topic 20)",
+          "covers": ["LALC - Lagos Archdiocesan Laity Council"],
+          "preparationQuestions": "https://docs.google.com/document/d/142T2ySqLvAFHs6qUzNVdrhRHUL-VvfHDQFEPIrnlnw8/edit",
+          "assignments": [
+            "Study LALC Guidelines - compare with how it should operate (4 aligned + 4 non-aligned)"
+          ],
+          "resources": {
+            "lalcGuidelinesPDF": "https://drive.google.com/file/d/13-VDkD9y6Cw31E7Dajgk7phhN78U7AA8/view",
+            "lalcSeminarExercises": "https://drive.google.com/file/d/1qauGu0QinDdMOmustBw9d_3suXLM_9Vq/view",
+            "lalcExtraReading": "https://drive.google.com/file/d/1NX2xVnKEDR8uljL1CLVAoRUoCkK4Xoae/view",
+            "lalcFeedbackCollation": "https://drive.google.com/file/d/1DJDzhLiZq89nOF4PqN-4V6dW4ErK_KnO/view",
+            "lalcResponsesToQuestions": "https://drive.google.com/file/d/1YlA4xf3l8EE3AUp5B83GPdj-VQAXu3iO/view",
+            "presentationSlides": "https://drive.google.com/file/d/1XKVdXfNoaeEbFC0DDQ20N0UWloVHEMTI/view",
+            "videos": {
+              "day1": "https://drive.google.com/file/d/1Ga0n-XZoJXzNy5rA94-SUbbNwxjcvnND/view",
+              "day2": "https://drive.google.com/file/d/1dM6EZ-AcDIvDRIYve8p9kJ_sYxmTR9wj/view"
+            }
+          },
+          "quiz": true
+        }
+      ],
+      "exerciseSubmission": "https://forms.gle/R3UiVmMDHUGw9KMMA"
+    },
+    {
+      "id": 3,
+      "name": "Leading Self for Mission",
+      "code": "LEAD-SELF",
+      "topics": [
+        {
+          "id": "topic-1",
+          "name": "Developing Self-Awareness for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/15U8uFvMbp2JsYHJg7P9HoQh53fnGEQJ9/edit",
+          "assignments": [
+            "Complete 6 Developing Self-Awareness Diagnostic Surveys (Excel sheets)",
+            "Identify Top 5 Gallup Talent Themes using CliftonStrengths assessment",
+            "Discover Top 3 Spiritual Gifts via spiritualgiftsinventory.com",
+            "Read about spiritual gifts from provided PDF resource",
+            "Complete 'Looking Through the Glass' exercise",
+            "Reflect on self-awareness scenario, emotional intelligence, cognitive styles, tolerance of ambiguity, locus of control",
+            "Analyze your Gallup Top Five Talents by domain (Executing/Influencing/Relationship Building/Strategic Thinking)",
+            "Identify Top 3 Ministry Spiritual Gifts by category (Roots/Branches/Leaves/Water)"
+          ],
+          "resources": {
+            "diagnosticSurveys": "https://docs.google.com/spreadsheets/d/1BYujfEn441y08VbVzLdCzp6I_AzFMwfD/edit",
+            "gallupTopFiveAssessment": "https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit",
+            "spiritualGiftsQuiz": "https://spiritualgiftsinventory.com/quiz/",
+            "spiritualGiftsPDF": "https://drive.google.com/file/d/1OpvMAgGBKNj8iKco0EfCbwtDsPGtfabw/view",
+            "lookingThroughTheGlass": "https://drive.google.com/file/d/1Itb290RDT0IMYwsKc0wcOHrcaY2SZaXY/view",
+            "optionalReading_SelfAwareness": "https://drive.google.com/file/d/1XMsY2qWQA40I6_fBUJXBnR3VcYoUqx5z/view",
+            "slides": "AEMP - Self Awareness - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/1b4Fggc6nVSQVvTS6HoYcotXqxtjMAz21/view"
+          }
+        },
+        {
+          "id": "topic-2",
+          "name": "Managing Personal Stress for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1I3qt7NKjhzdM-GH3hdc1InBzL4SRoo4V/edit",
+          "assignments": [
+            "Complete Managing Personal Stress Diagnostic Surveys (6 sheets)",
+            "Review current stress/time management competence levels and set 12-month goals",
+            "Identify current stressors and coping strategies (eliminate vs. manage)",
+            "Read and respond to 'Mabel' case study on stress management"
+          ],
+          "resources": {
+            "diagnosticSurveys": "https://docs.google.com/spreadsheets/d/1-rYLSrCN7-lAnk3xAdhpDWAbimj1hLhv/edit",
+            "mabelCaseStudy": "https://drive.google.com/file/d/1EuI0x753OQniQXx7rqAY7X4VRPG-07wR/view",
+            "slides": "AEMP - Managing Personal Stress - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/1pzmXariMSp18ZTInqvBfFyy77I0wD1mi/view"
+          }
+        },
+        {
+          "id": "topic-3",
+          "name": "Solving Problems for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1vgi4ZcNZAf6JcqykrQvZExSBFf550Vsf/edit",
+          "assignments": [
+            "Complete 3 Solving Problems Diagnostic Surveys",
+            "Review analytical/creative problem-solving competence levels and set 12-month goals",
+            "Study 'A Model of Problem Solving' handout",
+            "Apply problem-solving model to 'St. Peter's Catholic Church' case study",
+            "Respond to 'Father Tom's Laptop' case questions"
+          ],
+          "resources": {
+            "diagnosticSurveys": "https://docs.google.com/spreadsheets/d/1ooH7iNGLN3lm4cdIfA4ZQJ8EL83hQm5_/edit",
+            "modelOfProblemSolving": "https://drive.google.com/file/d/1gsouMf2yDDKNve_dYe95w21Tff-mXD-J/view",
+            "stPetersCaseStudy": "https://drive.google.com/file/d/11Xz2bf6IiLctZQVEjTB8wASqB8nrX5iP/view",
+            "fatherTomsLaptop": "https://drive.google.com/file/d/1gsouMf2yDDKNve_dYe95w21Tff-mXD-J/view",
+            "slides": "AEMP - Solving Problems for Mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/15KBA3oYRmADNecg9YPDH65y7iaAc9-CP/view"
+          }
+        }
+      ],
+      "exerciseSubmission": "https://forms.gle/KNC8Asdh548xmXiL8",
+      "quiz": true
+    },
+    {
+      "id": 4,
+      "name": "Relating for Mission",
+      "code": "LEAD-RELATE",
+      "topics": [
+        {
+          "id": "topic-4",
+          "name": "Communicating Supportively for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1OSOfEwLMuGznzgVVPaQ0U_mUfSd9x3d0/edit",
+          "assignments": [
+            "Complete 'Communicating Supportively' Diagnostic Survey",
+            "Read 'The Eight Principles of Supportive Communication' - Coaching vs Counseling",
+            "Analyze 'Cases involving Building Positive Relationships'"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/17zaR3dkjt63zE6YeITdl8z9zXHXvytkH/edit",
+            "eightPrinciplesHandout": "https://drive.google.com/file/d/1TjIeC3IpStEaYEsZFBzV48tSyJo2n98J/view",
+            "buildingPositiveRelationshipsCases": "https://drive.google.com/file/d/1THbNgHTX338gOvZ2BNxRgrEzZiSkv2WE/view",
+            "slides": "AEMP - Communicating Supportively for Mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/1Si_jiL1Bl4havLNcU5qjbZDNrefvr1q3/view"
+          }
+        },
+        {
+          "id": "topic-5",
+          "name": "Gaining Credibility and Influence for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1tIXsAVnQ5tnXz2uNfZ2fbx_6pGNRpYzT/edit",
+          "assignments": [
+            "Complete 'Gaining Power and Influence' Diagnostic Survey",
+            "Analyze 'The New Parish Laity Council Chairman' case study",
+            "Answer questions on power (pros/cons), personal vs position power",
+            "Identify parish positions with centrality, flexibility, visibility, relevance",
+            "Reflect on transforming power into influence"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/1MVpY2HSkQUlt5iP7Yh7-J3qEAigSj2o2/edit",
+            "newChairmanCaseStudy": "https://drive.google.com/file/d/1VMuA04UUZf2xzFocXXjtbhTHKUygXHF4/view",
+            "slides": "AEMP - Gaining Credibility and Influence for Mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/1FO1_CwOoe0cp7IakIr1gsChE_i0UTOhW/view"
+          }
+        },
+        {
+          "id": "topic-6",
+          "name": "Managing Conflicts for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1QsBOQ0DjOB_ohyuv89Fq1X3Ydn24LG_B/edit",
+          "assignments": [
+            "Complete 'Managing Conflicts' Diagnostic Survey",
+            "Reflect on personal instances of conflict (self, authorities, collaborators, faithful, organizations)",
+            "Categorize conflicts by source",
+            "Analyze 3 conflict cases: Tokunbo's Eatery, Avocado Computers, Phelps Inc.",
+            "Read 'Four Phases of Collaborative Problem Solving'",
+            "Analyze 'Can Larry Fit In?' case study and write a collaborative role-play script"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/1dY_fOUgQTQsrhKV3scxgPfsk4tMolT4u/edit",
+            "fourPhasesCollaborativeProblemSolving": "https://drive.google.com/file/d/1zGbAgf3QcETJKMyjc5zXl8iGydSv0bIa/view",
+            "canLarryFitInCase": "https://drive.google.com/file/d/1HkTiMQKZ3mWN3PlIWVJLaGxLcndeqE-G/view",
+            "slides": "AEMP - Managing Conflicts for Mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/19acy6x7r7Id83W9T1tVTJK1zkWCqph-W/view"
+          }
+        }
+      ],
+      "exerciseSubmission": "https://forms.gle/YZBd6mEPwtkwgsdYA",
+      "quiz": true
+    },
+    {
+      "id": 5,
+      "name": "Collaborating for Mission",
+      "code": "LEAD-COLLAB",
+      "topics": [
+        {
+          "id": "topic-7",
+          "name": "Motivating for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1h0OPX8odc2J6j300RiUkScfoeynbRDGq/edit",
+          "assignments": [
+            "Complete 'Motivating Others' Diagnostic Survey",
+            "Assess your competency in meeting motivation needs of others",
+            "Diagnose poor performance: identify obstacles and formulate improvement plan",
+            "Analyze 'Motivating Others' case study",
+            "Reflect on motivating vs demotivating aspects of your parish mission environment"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/1F9YwcRacWXQooYzKtu7GLgTsHccuPUNk/edit",
+            "motivatingOthersCaseStudy": "https://drive.google.com/file/d/1ZvACCl_YucMSLYg7I-_0vczhCcYegSuq/view",
+            "slides": "AEMP - Motivating others for mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/1h05KsCN5sXkcG2b569YC8Y2vgewqkbVQ/view"
+          }
+        },
+        {
+          "id": "topic-8",
+          "name": "Empowering for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1PY5zTeVUy4DBOi-AbNS_IPXTMm5bbdc8/edit",
+          "assignments": [
+            "Complete 'Empowerment' Diagnostic Survey",
+            "Reflect on your level of empowerment and how you empower others",
+            "Differentiate between having power vs being empowered",
+            "Analyze 'Minding the Store' case study (Ken Hoffman & Ruth Cummings)",
+            "Identify violated empowerment guidelines and propose solutions"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/1dntwOxy45ZhWNzatD03mdx9HD17wxSg9/edit",
+            "mindingTheStoreCaseStudy": "https://drive.google.com/file/d/1g4Q22Ww-Iuv6YwcGOp4G7R0kHHUqDShf/view",
+            "slides": "AEMP - Empowering for Mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/1yawxtADrHnAj40VrqKm8RpH_dwVXwyG2/view"
+          }
+        },
+        {
+          "id": "topic-9",
+          "name": "Delegating for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1cFd6Wo0Lnv_10olDXb_H4tgBQWzf6fuf/edit",
+          "assignments": [
+            "Complete 'Delegating' Diagnostic Survey",
+            "Analyze 'Delegating Case Study'",
+            "Differentiate delegation vs assignment (with examples)",
+            "Design a delegation plan for Harvest Planning Committee",
+            "Debate statements on delegation and motivation",
+            "Reflect on delegation as a tool for team development"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/1dntwOxy45ZhWNzatD03mdx9HD17wxSg9/edit",
+            "delegatingCaseStudy": "https://drive.google.com/file/d/1sImLHI1GQcm3jOdMoR7XBYhxAAdGB1vx/view",
+            "slides": "AEMP - Delegating for Mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/1rE-NmNvNW_DpTOMd5AEcv61D7vVsHrLC/view"
+          }
+        }
+      ],
+      "exerciseSubmission": "https://forms.gle/RkYv3pxLHFnvyiYn8",
+      "quiz": true
+    },
+    {
+      "id": 6,
+      "name": "Leading & Building Teams for Mission",
+      "code": "LEAD-TEAMS",
+      "topics": [
+        {
+          "id": "topic-10",
+          "name": "Leading and Building Teams and Groups for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1VmHM3OiUqQPXX-aim3mKZV1UFOZlC1V_/edit",
+          "assignments": [
+            "Complete 'Building Effective Teams' Diagnostic Survey",
+            "Complete Handouts 1-2 (Tasks - Leading Your Team)",
+            "Review Pastoral Competences and identify necessary skills",
+            "Complete Handouts 3-4 (Roles and responsibilities of team leader)",
+            "Read 'Group Roles and Trust Building' notes",
+            "Watch team building video (YouTube)",
+            "Complete Handouts 5, 6a, 6b (Building and developing a team)",
+            "Read 'Team Building Notes'"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/1W798ECdZXJMqlUkCvB9IFm4JambmYqyC/edit",
+            "leadingYourTeamHandouts": "https://drive.google.com/file/d/1eoIuGRGAA-Lz1Uw-R8FJu96RqjpgFqky/view",
+            "pastoralCompetences": "https://drive.google.com/file/d/14PFWQ_f0HPJLv4s6xHYtuIsnRlRRsdW8/view",
+            "groupRolesAndTrustBuilding": "https://drive.google.com/file/d/1JPGsvwD_vThVw_9r-G0S6UjwUlOeIdGp/view",
+            "teamBuildingVideo": "https://www.youtube.com/watch?v=nRYRZg8YSso",
+            "teamBuildingNotes": "https://drive.google.com/file/d/1TUN20WgfXK66EeVO4d8_aLKGyw9TlNL2/view",
+            "slides": "AEMP - Leading and Building Teams for Mission - 2026.pdf",
+            "video": "https://drive.google.com/file/d/1rrGmWwdPNMRWq4TwhUMkkT5nyZvXXXrX/view"
+          }
+        },
+        {
+          "id": "topic-11",
+          "name": "Conducting Effective Meetings for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1Mo2sJNP2Eq6nmmPpUWF6_1GsGdyaxotN/edit",
+          "assignments": [
+            "List all meetings you attend and their purposes",
+            "Read 'How to run a meeting' and 'Planning and Structuring Effective Meetings'",
+            "Reflect on challenges with meetings (Five Ps approach)",
+            "Identify effective vs ineffective participant behaviors",
+            "Read 'Managing Meeting Process' and 'Meeting Rules'",
+            "Analyze 'St. Albert Catholic Church' problem-solving case study"
+          ],
+          "resources": {
+            "howToRunAMeeting": "https://drive.google.com/file/d/1VzvaMpGNg27RYzKLu7QQUzw65NNwlK8r/view",
+            "planningEffectiveMeetings": "https://drive.google.com/file/d/1CGqkZ5wNrQicjPYcJT7g-vhkK-XnnoFF/view",
+            "managingMeetingProcess": "https://drive.google.com/file/d/1KPcObj_PcGlFWlcgzQcF-IXmfbJkRyyx/view",
+            "meetingRules": "https://drive.google.com/file/d/18d2_fTHR6VEOsPhGyAqxhCfsoLlMN5-x/view",
+            "stAlbertCaseStudy": "https://drive.google.com/file/d/1cX4L2Hz4Wiyu6sPI0pHYwL-ipV95X8A6/view",
+            "slides": "AEMP - Conducting Effective Meetings for Mission - May 2026.pdf",
+            "video": "https://drive.google.com/file/d/17FCVPY-gV5TLPQ_-slpFgGPMhOr9b4nO/view"
+          }
+        },
+        {
+          "id": "topic-12",
+          "name": "Leading Positive Change for Mission",
+          "preparationQuestions": "https://docs.google.com/document/d/1Q2QKkhqkHWYB8MPwLIDwfbBFCCTh3T8t/edit",
+          "assignments": [
+            "Complete 'Leading Positive Change' Diagnostic Survey",
+            "Recall a change effort in your parish - what worked and what could improve",
+            "Arm folding exercise - reflect on resistance to change",
+            "Complete all exercises from 'Leading Positive Change - Caselets and Exercises'"
+          ],
+          "resources": {
+            "diagnosticSurvey": "https://docs.google.com/spreadsheets/d/1d-WmE8HOirUJY-TBJKacWV_h9MfZfyXO/edit",
+            "caseletsAndExercises": "https://drive.google.com/file/d/1soB2nVbyvCagw_vSwZArzx3NxLdymd7-/view",
+            "slides": "AEMP - Leading Positive Change for Mission - Updated April 2026 PARTICIPANTS' Copy.pdf",
+            "video": "https://drive.google.com/file/d/1wJGDVdFc6z-N3J9fLZer_I4C7hzkDVXH/view"
+          }
+        }
+      ],
+      "exerciseSubmission": "https://forms.gle/FHjjbAe5qosCCwjY7",
+      "quiz": true
+    },
+    {
+      "id": 7,
+      "name": "Strengths Discernment",
+      "code": "DISCERN-STRENGTHS",
+      "description": "4-week programme covering Topics 4, 5, 6, 7",
+      "materials": {
+        "folder": "https://drive.google.com/drive/folders/1zOI-LAQU1ccdd2qf3-EvqG6tNo0owBFt",
+        "contents": [
+          "2025 Strengths Discernment - Weekly Exercises - Rev. June 2025 (Google Docs, Word, PDF - 603 KB)",
+          "Strengths Discernment - Weekly Submissions - 2026.docx (4.5 MB)",
+          "STRENGTHS WEEK 1-4 DAILY REFLECTIONS AND JOURNALING TEMPLATE - Rev. June 2025.xlsx (232 KB)"
+        ],
+        "fileIds": {
+          "weeklyExercisesGoogleDoc": "1UIeXml87YPmsaXskeserc1vW4Vj2At4j4_g0JC52xpU",
+          "weeklyExercisesDocx": "166oz6Wg1qj5T1uIPoJ4EsBpB0lH4KrhN",
+          "weeklyExercisesPdf": "1Ma_E4TMe-gRbWzv6QICoSyy_v9mwe2lQ",
+          "weeklySubmissionsDocx": "1X8OXBpHXpNcU-CQ6j9KS8fWqXRJBQ2gr",
+          "journalingTemplateXlsx": "1OzeMWtGW1x8III401r8BdnfNR4ss-N_W"
+        },
+        "linkedResources": {
+          "lysAudio": {
+            "title": "LYS - Chapter 1.m4a (Lead Yourself First audio)",
+            "fileId": "1AaP2Usig_lpx21wz_N7ethuDz6faA8EA",
+            "link": "https://drive.google.com/file/d/1AaP2Usig_lpx21wz_N7ethuDz6faA8EA/view"
+          },
+          "spiritualDiscernmentGuidelines": {
+            "title": "Spiritual Discernment Journeys - Guidelines for Participants",
+            "link": "https://docs.google.com/document/d/18hjxbg-dh6u6zUA-AUxQErcpCZvFCu0w/edit",
+            "summary": "11 guidelines covering attendance, submission deadlines, confidentiality, vulnerability, WhatsApp-only communication, confession/counselling, voluntary withdrawal, body-mind-spirit connection, subsidiarity, perseverance, and group norms"
+          },
+          "gallupSelfAssessmentSheet": {
+            "title": "Strengths Self-Assessment (34 CliftonStrengths themes with self-rating)",
+            "link": "https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit"
+          },
+          "youtubeVideos": [
+            { "title": "Strengths video reference 1", "url": "https://www.youtube.com/watch?v=ZrxFar1lB5U" },
+            { "title": "Strengths video reference 2", "url": "https://www.youtube.com/watch?v=10Kxq8okEtE" }
+          ]
+        }
+      },
+      "exerciseSubmission": "https://forms.gle/dcUGhCbFfHJCgZKq5",
+      "quiz": true
+    },
+    {
+      "id": 8,
+      "name": "Gifts Discernment",
+      "code": "DISCERN-GIFTS",
+      "description": "4-week programme covering Topics 11-14",
+      "materials": {
+        "folder": "https://drive.google.com/drive/folders/1qAuMtb8ZjHDZF2_757yRyveayGjM8Il9",
+        "contents": [
+          "2025 Gifts Discernment Weekly Exercises As Amended August (Word - 554 KB, PDF - 632 KB)",
+          "2025 Gifts Discernment Weekly Submission As Amended August.docx (504 KB)",
+          "2025 GIFTS WEEK 1-4 DAILY REFLECTIONS AND JOURNALING TEMPLATE As Amended June.xlsx (54 KB)"
+        ]
+      },
+      "exerciseSubmission": "https://forms.gle/ZZWwkfUVgwKK5u6i9",
+      "quiz": true
+    }
+  ],
+
+  "leadershipDiagnosticSurveys": {
+    "description": "10+ Excel-based self-assessment surveys used across Leadership modules",
+    "folder": "https://drive.google.com/drive/folders/183FC5UEqnRI-mpCzQP5ynhmMx2mjTqzv",
+    "surveys": [
+      "1. Developing Self Awareness.xlsx (320 KB)",
+      "2. Managing Stress.xlsx (112 KB)",
+      "3. Solving Problems.xlsx (159 KB)",
+      "4. Communicating Supportively.xlsx (121 KB)",
+      "5. Gaining Power and Influence.xlsx (110 KB)",
+      "6. Managing Conflicts.xlsx (110 KB)",
+      "7. Motivating for Mission.xlsx (110 KB)",
+      "8 & 9. Empowering and Delegating.xlsx (105 KB)",
+      "10. Leading Effective Teams.xlsx (58 KB)",
+      "12. Leading Positive Change.xlsx (113 KB)"
+    ]
+  },
+
+  "approvedGuidelines": {
+    "description": "Official Archdiocesan Governance Guidelines documents (PDFs)",
+    "folder": "https://drive.google.com/drive/folders/1zGCNaXJbBBNhlupDWRHoiYNIVpt-oqEE",
+    "documents": [
+      "1. 2023 Parish Pastoral & Laity Councils Guidelines.pdf (1.5 MB)",
+      "2. 2023 Parish Finance Council & Administration Guidelines.pdf (848 KB)",
+      "3. 2023 Human Resources Management Guidelines.pdf (1 MB)",
+      "4. Deanery Pastoral Council Guidelines.pdf (472 KB)",
+      "5. Deanery Laity Council Guidelines.pdf (643 KB)",
+      "6. LALC Guidelines -2024.pdf (185 KB)",
+      "7. Catholic Archdiocese of Lagos - Elections Guidelines.docx.pdf (259 KB)",
+      "8. Catholic Archdiocese of Lagos - 2026 Clarifications on Elections Guidelines.pdf (1.1 MB)",
+      "9. Updates on 2026 Clarifications of Elections Guidelines - MAY 2026 SPECIAL CIRCULAR-2.pdf (419 KB)"
+    ]
+  },
+
+  "calendar": {
+    "studyCalendarLink": "https://docs.google.com/spreadsheets/d/1Y8wQNtwVbXR1ix8idcc8LfEEoDJaFJ1FfoMJ5G49tD4/edit",
+    "sampleGroupStudySchedule": "https://docs.google.com/spreadsheets/d/17dtH5pqfiJK9NqNJZalfM9U089_fGPB8Tvpl9-Ia1l0/edit",
+    "marchGuidelinesSchedule": "https://docs.google.com/spreadsheets/d/1eNfoJwdTdCT1UoH-kXBVBWol481sndVneK1o0HePbV8/edit",
+    "firstTerm": {
+      "period": "January - June 2026",
+      "streams": {
+        "streamA": "Leadership (Virtual/Physical), Guidelines, Strengths, Gifts",
+        "streamB": "Guidelines, Leadership, Gifts, Strengths",
+        "streamC": "Strengths, Gifts, Leadership, Guidelines",
+        "streamD": "Gifts, Strengths, Guidelines, Leadership"
+      },
+      "monthlyRotation": {
+        "jan_feb": "Leadership A, Guidelines B, Strengths C, Gifts D",
+        "march": "Guidelines A, Leadership B, Gifts C, Strengths D",
+        "april": "Strengths A, Gifts B, Leadership C, Guidelines D",
+        "may_june": "Gifts A, Strengths B, Guidelines C, Leadership D"
+      },
+      "quizSchedule": "Every Sunday at 8pm-9:30pm",
+      "breakWeeks": "After each 4-week block"
+    },
+    "secondTerm": {
+      "starts": "July 14, 2026",
+      "description": "Both Zoom and Physical sessions resume",
+      "schedule": {
+        "guidelines": {
+          "july14-19": "PPC/PLC/PFC Guidelines",
+          "july21-26": "DPC/DLC/LALC Guidelines",
+          "july28-aug2": "Elections/Discipline/Restoration Guidelines",
+          "aug4-9": "Sources/Applications/Finance & Administration"
+        },
+        "leadership": {
+          "aug25-30": "Managing Self for Mission",
+          "sept1-6": "Relating for Mission",
+          "sept8-13": "Collaborating for Mission",
+          "sept15-20": "Leading & Building Teams for Mission"
+        },
+        "strengthsGifts": {
+          "oct6-nov28": "Strengths and Gifts Discernment (8 consecutive weeks, includes Physical Saturdays)"
+        }
+      },
+      "commissioningCeremony": "November 29, 2026"
+    },
+    "clergyTrack": {
+      "description": "Separate 4-module programme for clergy",
+      "sessions": [
+        { "date": "January 28-29, 2026", "module": "Leading Effective Organizations", "topics": ["The Effective Organization", "Delegating for Mission", "Building Effective Teams", "Running Effective Meetings"], "quiz": "January 30" },
+        { "date": "February 25-26, 2026", "module": "Leading Self for Mission", "topics": ["Personal Mission Statement", "Stress Management Plan", "Solving Complex Problems", "Gaining Credibility & Influence"], "quiz": "February 27" },
+        { "date": "March 25-26, 2026", "module": "Leading Others for Mission", "topics": ["Motivating Others", "Managing Conflicts", "Empowering Others", "Leading Positive Change"], "quiz": "March 27" },
+        { "date": "April 29-30, 2026", "module": "Guidelines & Discernment for Mission", "topics": ["Parish Councils Guidelines", "Lay Organisations Guidelines", "Strengths Discernment Intro", "Gifts Discernment Intro"], "quiz": "May 1" }
+      ]
+    }
+  },
+
+  "registration": {
+    "form": "https://forms.gle/32zLgwt97KBewj879",
+    "altForm": "https://docs.google.com/forms/d/e/1FAIpQLSd_pARxMhbYkfU3GQNkbQExwOmUSutLAvgrmnh4H2xmbXMhdw/viewform",
+    "secondTermInfo": "Invitations to WhatsApp groups emailed first week of June 2026 (for Zoom/Physical registrants only)",
+    "cancellation": "If you registered for Zoom/Physical but studied via Self/Group Study, re-register and choose 'Cancellation'"
+  },
+
+  "tracking": {
+    "completionStatusRecords": {
+      "description": "Check your AEMP scores and completion status by region (Google Sheets)",
+      "link": "https://drive.google.com/drive/folders/1jS1E2FTt14efPUHRe2k4zuhZfGEPSOgp",
+      "regions": [
+        "BADAGRY REGION - AEMP CONSOLIDATED ATTENDANCE",
+        "IKEJA REGION - AEMP CONSOLIDATED ATTENDANCE",
+        "LAGOS REGION - AEMP CONSOLIDATED ATTENDANCE",
+        "LEKKI REGION - AEMP CONSOLIDATED ATTENDANCE",
+        "UNKNOWN REGION AEMP CONSOLIDATED"
+      ]
+    },
+    "zoomAttendanceRecords": {
+      "description": "Session-by-session attendance sheets organized by month and module stream",
+      "link": "https://drive.google.com/drive/folders/1AI85JSLk63V57xLtoZb0lwykP_KxIHgv",
+      "files": [
+        "Raw Zoom File (Jan)",
+        "FEB_GIFTS_ZOOM D", "FEB_GUIDELINES_ZOOM B", "FEB_LEADERSHIP_ZOOM A", "FEB_STRENGTHS_ZOOM C",
+        "MARCH_GIFT_ZOOM C", "MARCH_GUIDELINES_ZOOM A", "MARCH_LEADERSHIP_ZOOM B", "MARCH_STRENGTHS_ZOOM D",
+        "APRIL_GIFTS_ZOOM B", "APRIL_GUIDELINES_ZOOM D", "APRIL_LEADERSHIP_ZOOM C", "APRIL_STRENGTHS_ZOOM A",
+        "MAY_GIFTS_ZOOM A", "MAY_GUIDELINES_ZOOM C", "MAY_LEADERSHIP_ZOOM D", "MAY_STRENGTHS_ZOOM B"
+      ]
+    },
+    "personalProgressTracker": {
+      "description": "Download-and-use personal tracking sheet (tracks attendance, submissions, quiz scores per module)",
+      "link": "https://docs.google.com/spreadsheets/d/1NYo_a39BZRB6MyemC1fkj5KLk45At5s72rlbnv72LtM/edit",
+      "modulesTracked": ["Parish Guidelines", "Deanery & Archdiocesan Guidelines", "Leading Self (3 topics)", "Relating (3 topics)", "Collaborating (3 topics)", "Leading Teams (3 topics)", "Strengths (4 weeks + capstone)", "Gifts (4 weeks + capstone)"]
+    },
+    "dataEntryTrackingSheet": {
+      "description": "Shows complaint tracking per deanery (used before escalating issues)",
+      "link": "https://docs.google.com/spreadsheets/d/1235Dcc7w0KJVtNQoJcVlEaKYeuii76B5wlskUArXGrw/edit",
+      "deaneriesTracked": ["Agege", "Ajah", "Apapa", "Badagry", "Epe", "Festac", "Iba", "Ijanikin", "Ijede", "Ikeja", "Ikorodu", "Ilemba", "Ipaja", "Isolo", "Lagos Island", "Lekki", "Maryland", "Satellite", "Surulere", "Yaba"]
+    }
+  },
+
+  "elections": {
+    "description": "2026 Laity Elections - aligned with AEMP completion requirements",
+    "resourcesDoc": "https://docs.google.com/document/d/1a-L9aGFNjo80CnDgvZrkE7rVwUJ_wf3KTWmMkvBf3N0/edit",
+    "approvedGuidelines": "https://drive.google.com/drive/folders/1zGCNaXJbBBNhlupDWRHoiYNIVpt-oqEE",
+    "stepsToManagingElections": "https://docs.google.com/document/d/1ITSIyVNx788WNivtdziKfChOgmtAa14a5bIRrqCXjMY/edit",
+    "electionVideos": {
+      "shortQA": "https://youtu.be/Dnbf5peToJI",
+      "fullQA": "https://youtu.be/yacpeVNsG30"
+    },
+    "tools": {
+      "parishElectionsPrep": "https://docs.google.com/spreadsheets/d/13SimA2TN1YwdJ8yfb-cfsbrqkr6axyjxEod2NIiUHX0/edit",
+      "layGroupElectionsPrep": "https://docs.google.com/spreadsheets/d/1hK06a2R6cpr3zbFe8p01VC8KRbvzWVHAZkW-KDjEwQI/edit",
+      "returningOfficerReport": "https://docs.google.com/spreadsheets/d/1u1sNd7dotpmuuoxeKF7lAneIuXIu7Pi0jVrjxhcJd2A/edit",
+      "postElectionsSurvey": "https://docs.google.com/spreadsheets/d/1Kjft2lwxBkLZK799UaxBYsjNrCecwNSg2m68L70t3GA/edit"
+    },
+    "violationsReporting": "https://forms.gle/iTcjoWWehKoNi5rc7",
+    "phasedApproach": [
+      { "phase": "February", "description": "Group elections for groups with 25+ members, aligned constitutions, and 3+ eligible members with min 4 AEMP scores" },
+      { "phase": "March", "description": "Parish Priest reviews outcomes and communicates next steps" },
+      { "phase": "April", "description": "Repeat process; eligible members need 18 AEMP scores to be voted for" },
+      { "phase": "June", "description": "Final elections phase; 18 AEMP scores required" },
+      { "phase": "End of July", "description": "Deadline for AEMP completion (18/18 scores)" },
+      { "phase": "August", "description": "Organizations submit executive AEMP status; vacant positions collated by PLC Elections Monitoring Committee" },
+      { "phase": "September", "description": "By-elections for remaining positions (18/18 required)" },
+      { "phase": "November 29", "description": "Official Commissioning Ceremony for all Parish leaders" }
+    ]
+  },
+
+  "forms": {
+    "registration": "https://forms.gle/32zLgwt97KBewj879",
+    "complaints": "https://forms.gle/ksudnw4zoStTJhsRA",
+    "whatsappReAdd": "https://forms.gle/yp3rQCLHctXs8Bbm6",
+    "electionsViolations": "https://forms.gle/iTcjoWWehKoNi5rc7",
+    "endOfProgrammeFeedback": "https://forms.gle/CSEVPncSBbXLpJ1Z6",
+    "exerciseSubmissions": {
+      "leadershipManagingSelf": "https://forms.gle/KNC8Asdh548xmXiL8",
+      "leadershipRelating": "https://forms.gle/YZBd6mEPwtkwgsdYA",
+      "leadershipCollaborating": "https://forms.gle/RkYv3pxLHFnvyiYn8",
+      "leadershipLeadingTeams": "https://forms.gle/FHjjbAe5qosCCwjY7",
+      "strengths": "https://forms.gle/dcUGhCbFfHJCgZKq5",
+      "gifts": "https://forms.gle/ZZWwkfUVgwKK5u6i9",
+      "guidelinesParish": "https://forms.gle/CR44J5iQ61ULRCFr8",
+      "guidelinesDeaneryArchdiocesan": "https://forms.gle/R3UiVmMDHUGw9KMMA"
+    }
+  },
+
+  "videos": {
+    "orientation": {
+      "aempOnboarding": "https://youtu.be/uuJX1zLOmXQ",
+      "leadershipDiscoveryWorkshop": "https://youtube.com/live/lQOmb4aWGvQM"
+    },
+    "tutorials": {
+      "nameDeviceOnZoom": "https://youtu.be/2N5H55LDg-o",
+      "joinWhatsAppGroup": "https://youtu.be/oNJi8XCQZvQ",
+      "leaveWhatsAppGroup": "https://youtu.be/WcgfBpQcXow"
+    },
+    "elections": {
+      "guidelinesShort": "https://youtu.be/Dnbf5peToJI",
+      "guidelinesFull": "https://youtu.be/yacpeVNsG30"
+    },
+    "guidelinesSeminar": {
+      "introduction": "https://drive.google.com/file/d/1DCRpedc0dGBBGOdu0CW9teX8dM9s1uaW/view",
+      "plcQA": "https://drive.google.com/file/d/1iyyFGXZhxwxU_8A2NymxWS6_JzCPKhu5/view",
+      "ppcQA": "https://drive.google.com/file/d/18p-NzwETWv9m7_d7qZ2NyC6TDATtf3fA/view"
+    }
+  },
+
+  "keyDocuments": {
+    "aempFAQandRules": "https://docs.google.com/document/d/1XUndRCaDSPwkjEodQ1eRwlnC8ZCvj9OZEQviWRmNhzE/edit",
+    "selfStudyMaterialsFull": "https://docs.google.com/document/d/15T9RDCwXzftn9rkxdJ4ZsEOGFIzvA9pi/edit",
+    "selfGroupStudyFAQs": "https://docs.google.com/document/d/14BbysyHTXfZaRAJ7iUJJxR9f70rJ3rsRoGM7y_nSET8/edit",
+    "groupStudySetupGuide": "https://docs.google.com/document/d/1ZcCYF-2N-dXST6cCH5ceEbNuisDYpeixWHdFoRMlZY4/edit",
+    "helpfulVideosAndResources": "https://docs.google.com/document/d/1r5MurUmIJirElfYPItBaeWi6JkHuefVAHdsgxBfl_4k/edit",
+    "electionsResources": "https://docs.google.com/document/d/1a-L9aGFNjo80CnDgvZrkE7rVwUJ_wf3KTWmMkvBf3N0/edit",
+    "studyCalendar": "https://docs.google.com/spreadsheets/d/1Y8wQNtwVbXR1ix8idcc8LfEEoDJaFJ1FfoMJ5G49tD4/edit",
+    "sampleGroupStudySchedule": "https://docs.google.com/spreadsheets/d/17dtH5pqfiJK9NqNJZalfM9U089_fGPB8Tvpl9-Ia1l0/edit",
+    "marchGuidelinesSchedule": "https://docs.google.com/spreadsheets/d/1eNfoJwdTdCT1UoH-kXBVBWol481sndVneK1o0HePbV8/edit"
+  },
+
+  "communication": {
+    "telegram": "https://t.me/+iMXI3ZGkFUJiN2Vk",
+    "whatsAppRules": [
+      "No private messages or calls to admins (will not be responded to)",
+      "Platforms available 6pm-10am daily",
+      "Course-related questions only",
+      "No complaints about attendance/scores on platforms (use Complaints Form)",
+      "Be on only one M&A platform at a time (exit all others)",
+      "Self-study participants: LFM facilitators not available for help",
+      "Parish groups may organize their own platforms for self-study members",
+      "LFM discontinuing WhatsApp for self-study participants at end of 2026"
+    ]
+  },
+
+  "importantDates": {
+    "secondTermStart": "July 14, 2026",
+    "whatsAppInvitesEmailed": "First week of June 2026",
+    "concessionaryPassMarkEnds": "June 2026",
+    "aempCompletionDeadline": "End of July 2026 (18/18 scores required)",
+    "commissioningCeremony": "November 29, 2026",
+    "quizDay": "Sundays at 8pm-9:30pm (check calendar for exact dates)"
+  },
+
+  "parishGroups": {
+    "recognizedGroups": ["CWO (Catholic Women's Organisation)", "CMO (Catholic Men's Organisation)", "CYON (Catholic Youth Organisation of Nigeria)", "CCM (Catholic Charismatic Movement)", "St. Vincent De Paul", "JDPC (Justice, Development and Peace Commission)", "Charismatic Renewal"],
+    "groupStudyModel": "Small groups of 6-16 members, with assigned discussion leaders",
+    "groupRequirements": ["Minimum 25 members", "Constitution aligned with AEMP Governance Guidelines", "3+ eligible members with min 4 AEMP scores (for essential positions)"]
+  },
+
+  "noteForMusicMinistry": "The Spiritual Discernment modules (Strengths & Gifts) are especially relevant: 'Musicianship' is listed as a 'Leaves' category spiritual gift. The Gifts Discernment journaling and reflection exercises help you identify how your musical talent serves the mission of evangelization.",
+
+  "strengthsDiscernment": {
+    "curriculum": {
+      "description": "4-week Strengths Discernment journey based on CliftonStrengths talent themes. Full 20-page PDF extracted.",
+      "weeks": {
+        "week1": {
+          "title": "Signature Themes - Discovering Your Talent Themes",
+          "exercises": [
+            "Identify your Top 5 talent themes via Gallup assessment (Option 1: self-rate 34 themes 1-3; Option 2: purchase Gallup assessment)",
+            "Create your Signature Themes collage - write each theme on a separate page with the theme description, what it sounds like, what it looks like, and how it shows up in your life",
+            "Post 1 collage photo per theme (5 posts) in your group WhatsApp with a voice note or written reflection on each"
+          ]
+        },
+        "week2": {
+          "title": "Living Your Strengths - Making Your Talents Productive",
+          "exercises": [
+            "Read the description of each of your 5 themes on Gallup's website and watch the associated theme webinar",
+            "Identify what you do in your daily life that already reflects each talent theme (at least 3 examples per theme)",
+            "Identify new ways you could use each talent theme to serve your family, workplace, parish, and community",
+            "Post about the insights from one theme each day (Week 2 = Mon-Fri, 1 theme per day)"
+          ]
+        },
+        "week3": {
+          "title": "Developing Your Strengths - Aware & Proactive Use of Your Talents",
+          "exercises": [
+            "Answer for each of your 5 themes: What would happen if I used this talent more? What would happen if I used this talent less?",
+            "Identify one action you can take this week for each theme to use it more effectively",
+            "For each theme: describe a person you know who exemplifies this talent well and what you can learn from them",
+            "Complete the Strengths Journaling Template (XLSX) for Week 3 daily reflections"
+          ]
+        },
+        "week4": {
+          "title": "Sustaining Your Strengths - Integration for Mission",
+          "exercises": [
+            "Complete an integration exercise: how your 5 themes work together as a team inside you",
+            "Identify potential blind spots of each theme (overuse or misuse)",
+            "Write your Strengths Partnership Plan: identify who complements your strengths (someone whose top themes differ from yours)",
+            "Write your personal mission statement integrating your top 5 talent themes",
+            "Post: 'My Top 5 Strengths and my mission statement' as your final post"
+          ]
+        }
+      },
+      "submissions": "Weekly submissions posted to group WhatsApp (5 posts Week 1, daily Mon-Fri Weeks 2-4)",
+      "capstone": {
+        "title": "Strengths Partnership Plan",
+        "description": "Final exercise: pair up with someone whose strengths complement yours, create a joint plan for collaborative mission"
+      }
+    },
+    "gallupCliftonStrengths": {
+      "description": "34 talent themes organized into 4 domains. Used to identify your Top 5 natural talents for leadership and mission.",
+      "assessmentLink": "https://www.gallup.com/cliftonstrengths/en/253715/34-cliftonstrengths-themes.aspx",
+      "domains": {
+        "executing": {
+          "description": "People who know how to make things happen",
+          "themes": ["Achiever", "Arranger", "Belief", "Consistency", "Deliberative", "Discipline", "Focus", "Responsibility", "Restorative"]
+        },
+        "influencing": {
+          "description": "People who know how to take charge, speak up, and make sure others are heard",
+          "themes": ["Activator", "Command", "Communication", "Competition", "Maximizer", "Self-Assurance", "Significance", "Woo"]
+        },
+        "relationshipBuilding": {
+          "description": "People who build strong relationships that hold a team together",
+          "themes": ["Adaptability", "Connectedness", "Developer", "Empathy", "Harmony", "Includer", "Individualization", "Positivity", "Relator"]
+        },
+        "strategicThinking": {
+          "description": "People who absorb and analyze information to make better decisions",
+          "themes": ["Analytical", "Context", "Futuristic", "Ideation", "Input", "Intellection", "Learner", "Strategic"]
+        }
+      },
+      "selfAssessmentSheet": {
+        "title": "34 CliftonStrengths Self-Rating",
+        "link": "https://docs.google.com/spreadsheets/d/14zmA36tcYs_8hDFX5no7Xx0ixHCtwwxd/edit",
+        "format": "Rate each of the 34 themes as 1 (not me), 2 (maybe), or 3 (definitely me)"
+      }
+    }
+  },
+
+  "extractedPdfContent": {
+    "location": "aemp/extracted/ directory (JSON files with full text)",
+    "guidelines": {
+      "parishPastoralLaityCouncils": {
+        "pages": 21,
+        "summary": "Official Archdiocese of Lagos Parish Pastoral & Laity Councils Guidelines. Covers: purpose/functions of PPC, consultative role, core pastoral areas, councilor responsibilities, membership, selection, tenure, meeting protocols, relationship between PPC and PLC."
+      },
+      "parishFinanceAdmin": {
+        "pages": 25,
+        "summary": "Parish Finance Council & Administration Guidelines. Covers: consultative body to Parish Priest, recommended consultation areas, membership, officers, conflicts of interest, tenure, meeting protocols, committees."
+      },
+      "humanResources": {
+        "pages": 24,
+        "summary": "Human Resources Management Guidelines (Revised 2023). Covers: HR policies for clergy, lay employees, and volunteers; background on missionary mandate (Matt 28:19) and Vatican II."
+      },
+      "deaneryPastoralCouncil": {
+        "pages": 7,
+        "summary": "Deanery Pastoral Council Guidelines (Oct 2019). Mission: coordinate pastoral activities of parishes for managing representation and sharing best practices."
+      },
+      "deaneryLaityCouncil": {
+        "pages": 10,
+        "summary": "Deanery Laity Council Guidelines (Oct 2019). Charged by Apostolicam Actuositatem with intensifying apostolic activity of laity."
+      },
+      "lalcGuidelines": {
+        "pages": 9,
+        "summary": "Archdiocesan Laity Council Guidelines (Aug 2022). Charged with promoting solidarity and mutual support among deanery councils."
+      }
+    },
+    "caseStudies": {
+      "stThomasWinneba": {
+        "pages": 2,
+        "summary": "St. Thomas Catholic Church - Father Kofi's inclusive leadership built community (parish house, church building, harvest growth). Conflict arose when he began consulting only one parishioner (Mr. Mensah), leading to drastic harvest decline and reduced participation."
+      },
+      "ekaDeanery": {
+        "pages": 1,
+        "summary": "Eka Deanery Laity Council Chairperson issued directives: 'Year of Praying for Dead' with mandatory prayers, N500/member levy split with Archdiocesan Council, delegate limits. Presidents questioned alignment with Archbishop's guidelines."
+      },
+      "mabel": {
+        "pages": 1,
+        "summary": "Mabel (22, graduate) works long hours (4:30am-8pm), active in parish (CYON, Choir, Sacred Heart, Block Rosary, Deanery Secretary), plus online courses. Shows stress signs: isolation, slower work, crying, irritability, emotional outbursts."
+      },
+      "stPetersChurch": {
+        "pages": 1,
+        "summary": "St. Peter's lost 1/3 of 1500 parishioners due to heat, bad PA system, poor altar visibility. PPC Vice Chairman Chief Okoye led renovation (AC, screens, nursing area, PA system) funded by 10th anniversary, bringing parishioners back."
+      },
+      "newPlcChairman": {
+        "pages": 2,
+        "summary": "Austin Ajao (40, 5 yrs in parish, only YCP experience) elected PLC Chairman with 15 voters. Within a year: meeting attendance lowest, activities sparse, fund-raising failed. Blamed minority state status; Parish Priest unsure how to handle constitutionally elected but ineffective leader."
+      },
+      "canLarryFitIn": {
+        "pages": 5,
+        "summary": "Conflict management exercise with scenarios: Tokunbo's Eatery (family, smoke allergy), Avocado Computers (lazy colleague), Phelps Inc. (workload equity). Uses Table 4 to match strategies to situational factors."
+      },
+      "motivatingOthers": {
+        "pages": 2,
+        "summary": "Shade Sambo case: single parent, consistently 10-20 min late, manager Andy Taiwo must address performance using reshaping techniques. Includes role-play instructions."
+      },
+      "mindingTheStore": {
+        "pages": 2,
+        "summary": "Ruth Cummings, new branch manager, hired admin assistant at above-market rate. Boss Ken Hoffman questioned her autonomy. Includes empowerment/delegation analysis."
+      },
+      "delegating": {
+        "pages": 6,
+        "summary": "Kunle, building committee chairman of St. Dennis Church, under pressure to deliver outstation church building in 8 months. Must delegate due to work travel. Includes delegation planning worksheets."
+      },
+      "stAlbertChurch": {
+        "pages": 1,
+        "summary": "Fr. Ugboko, new Dean, gave PPC Vice Chairman Chief Okodudu increased responsibility. While Fr. was on vacation, Chief signed renovation contract, bought generator, donated parish funds to outstation. Question: PPC or PFC handles this?"
+      },
+      "leadingPositiveChange": {
+        "pages": 11,
+        "summary": "Fr. Okon's new parish: PPC/PFC not met in 2 years, PLC led removal of past PP, families not speaking, finances in disarray. Uses AEMP exercises (Reflected Best Self) with parish leaders. Includes 14 caselets on change scenarios."
+      }
+    },
+    "handouts": {
+      "spiritualGifts": {
+        "pages": 14,
+        "summary": "Full descriptions of spiritual gifts: Administration, Craftsmanship, Digital Media, Encouragement, Evangelization, Faith, Giving, Healing, Helps, Hospitality, Intercessory Prayer, Knowledge, Leadership, Mercy, Music Ministry, Pastoring, Prophecy, Service, Teaching, Wisdom. Each with Scripture references, CCC references, patron saint, and possible parish roles."
+      },
+      "lookingThroughTheGlass": "Self-awareness exercise: share assessment scores with group, complete 10 sentence stems about strengths, weaknesses, success, priorities, and impressions of others.",
+      "modelOfProblemSolving": "4 pages combining St. Peter's case study with problem-solving model handout.",
+      "supportiveCommunication": {
+        "pages": 2,
+        "type": "scanned image (extracted via OCR)",
+        "principles": [
+          "1. Congruent, not incongruent — honest messages where verbal statements match thoughts and feelings",
+          "2. Descriptive, not evaluative — describe objective occurrence, your reaction, and offer alternative",
+          "3. Problem-oriented, not person-oriented — focus on issues that can be changed, not people",
+          "4. Validating, not invalidating — communicate respect, flexibility, collaboration, agreement",
+          "5. Specific, not global — focus on specific events/behaviors, avoid extreme or either-or statements",
+          "6. Conjunctive, not disjunctive — statements that flow from previous and facilitate interaction",
+          "7. Owned, not disowned — take responsibility using personal 'I' words",
+          "8. Supportive listening, not one-way listening — use varied responses with bias toward reflective"
+        ],
+        "source": "D.A. Whetten and K.S. Cameron, 2007. Developing Management Skills"
+      },
+      "collaborativeProblemSolving": "10 pages covering 4 phases: problem identification, solution generation, action plan formulation, implementation/follow-up. Detailed guidance for initiator, responder, and mediator roles.",
+      "selfAwarenessCase": "5 pages: Healthcare director's story - lost superstar manager due to underperforming peer; used 360 evaluations and data but manager explained away all feedback.",
+      "howToRunAMeeting": "9 pages: James Ware classic reading on meeting effectiveness - setting objectives, selecting participants, agenda planning, problem-solving encouragement, decision-making.",
+      "planningEffectiveMeetings": "4 pages: Components (content, interaction, process), achieving objectives, chairperson roles.",
+      "managingMeetingProcess": "2 pages: Exercise identifying task-facilitating, relationship-building, and blocking roles in EXCO.",
+      "meetingRules": "1 page: 10 rules from meetingsift.com - participate, let everyone participate, listen with open mind, think before speaking, stay on point, attack the problem not the person, close decisions, record outcomes.",
+      "pastoralCompetences": "3 pages: Catholic Leadership 360 for Lay Leaders - maps Church sources (Co-Workers in the Vineyard, Certification Standards, Excellence Standards, De Lambo study) to 99 research-based competencies.",
+      "groupRoles": "8 pages: Benne and Sheats' 26 group roles - task roles, personal/social roles, dysfunctional/individualistic roles.",
+      "teamBuilding": "5 pages: Tuckman's stages - Forming, Storming, Norming, Performing. Leader tasks and effective behaviors for each stage.",
+      "lalcExtraReading": "3 pages: Canon Law norms for canonical elections - eligibility, active/passive voice, voting validity, majority requirements."
+    }
+  },
+
+  "spiritualDiscernmentJourneys": {
+    "description": "Prayer journey programme referenced in the Strengths materials; separate from AEMP but complementary",
+    "guidelinesDoc": "https://docs.google.com/document/d/18hjxbg-dh6u6zUA-AUxQErcpCZvFCu0w/edit",
+    "guidelinesSummary": [
+      "Non-attendance at first session results in removal and deferral to next batch",
+      "Timely submission, commitment, openness, honesty, sincerity required",
+      "Late/non-submissions lead to removal unless reason communicated",
+      "Confidentiality of posts and group conversations expected",
+      "Vulnerability encourages healing but share only what is comfortable",
+      "All communication via WhatsApp groups (no private chats to mentors)",
+      "Confession and pastoral counselling recommended alongside the journey",
+      "Voluntary withdrawal allowed; discuss with mentors first (may be resistance)",
+      "Body-mind-spirit connection; psychological issues referred to psychotherapist (Chichi)",
+      "Subsidiarity: reach out to group members before mentors",
+      "Group norms: respectful, considerate, supportive; disruptive behaviour = removal"
+    ]
+  }
+}
